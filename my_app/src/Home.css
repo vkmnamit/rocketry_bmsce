@@ -527,10 +527,12 @@ html {
 
 
 .number {
-    padding: 6rem 0;
+    padding: 6rem 3rem;
     background-color: #f9f9f9;
     text-align: center;
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .number>p {
@@ -544,9 +546,11 @@ html {
 .num {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 6rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .num-item {
@@ -570,14 +574,17 @@ html {
 
 
 .sponser_name {
-    padding: 6rem 0;
+    padding: 6rem 3rem;
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .feature-in-1 {
     text-align: center;
     margin-bottom: 4rem;
     padding: 0 3rem;
+    width: 100%;
 }
 
 .feature-in-1>p {
@@ -591,8 +598,10 @@ html {
 .feature-logos {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 4rem;
     align-items: center;
+    width: 100%;
 }
 
 .feature-logos img {
@@ -609,7 +618,10 @@ html {
 
 .feature-in-2 {
     text-align: center;
-    padding: 4rem 0;
+    padding: 4rem 3rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .feature-in-2>p {
@@ -1041,9 +1053,24 @@ html {
         gap: 2rem;
     }
 
+    .feature-in-1 {
+        padding: 0 2rem;
+    }
+
+    .feature-logos {
+        gap: 2rem;
+    }
+
+    .feature-logos img {
+        height: 40px;
+    }
+
+    .number {
+        padding: 5rem 2rem;
+    }
+
     .num {
         gap: 4rem;
-        padding: 5rem 2rem;
     }
 
     .feature-in-2 {
@@ -1259,20 +1286,33 @@ html {
 
     .sponser_name {
         padding: 3rem 1rem;
-        flex-wrap: wrap;
         gap: 1.5rem;
         width: 100%;
         overflow-x: hidden;
     }
 
-    .sponser_name img {
-        width: 80px;
+    .feature-in-1 {
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-logos {
+        gap: 1.5rem;
+    }
+
+    .feature-logos img {
+        height: 35px;
+        width: auto;
+    }
+
+    .number {
+        padding: 4rem 1rem;
     }
 
     .num {
         flex-direction: column;
         gap: 2rem;
-        padding: 4rem 1rem;
+        padding: 0;
         width: 100%;
     }
 
@@ -1458,8 +1498,22 @@ html {
         padding: 2rem 1rem;
     }
 
-    .sponser_name img {
-        width: 80px;
+    .feature-in-1 {
+        padding: 0 1rem;
+    }
+
+    .feature-logos {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .feature-logos img {
+        height: 30px;
+        width: auto;
+    }
+
+    .number {
+        padding: 3rem 1rem;
     }
 
     .num h1 {
