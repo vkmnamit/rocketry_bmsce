@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 body {
@@ -10,15 +12,33 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     color: #1a1a1a;
     line-height: 1.6;
-    overflow-x: auto;
+    overflow-x: hidden;
     background-color: #fff;
     width: 100%;
     max-width: 100vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 html {
-    overflow-x: auto;
+    overflow-x: hidden;
     width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+p, span, div, li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -179,7 +199,7 @@ html {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .body h1 {
@@ -207,7 +227,7 @@ html {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .left_services h1 {
@@ -315,7 +335,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .project1,
@@ -532,7 +552,7 @@ html {
     text-align: center;
     width: 100%;
     max-width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .number>p {
@@ -577,7 +597,7 @@ html {
     padding: 6rem 3rem;
     width: 100%;
     max-width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .feature-in-1 {
@@ -607,6 +627,7 @@ html {
 .feature-logos img {
     height: 50px;
     width: auto;
+    max-width: 100%;
     opacity: 0.6;
     transition: opacity 0.3s ease;
 }
@@ -621,7 +642,7 @@ html {
     padding: 4rem 3rem;
     width: 100%;
     max-width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .feature-in-2>p {
@@ -712,7 +733,7 @@ html {
     color: #fff;
     padding: 6rem 3rem;
     text-align: center;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .review_box>p {
@@ -775,7 +796,7 @@ html {
     max-width: 100%;
     width: 100%;
     margin: 0;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .partner_box_left h1 {
@@ -867,7 +888,10 @@ html {
 
 .partner_box_right img {
     width: 100%;
-    height: 930px;
+    max-width: 100%;
+    height: auto;
+    min-height: 600px;
+    max-height: 930px;
     object-fit: cover;
     border-radius: 8px;
     margin-top: -180px;
@@ -886,7 +910,7 @@ html {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .footer h2 {
@@ -1130,7 +1154,7 @@ html {
 
     body,
     html {
-        overflow-x: auto;
+        overflow-x: hidden;
         max-width: 100vw;
         width: 100%;
     }
@@ -1188,7 +1212,7 @@ html {
         grid-template-columns: 1fr;
         gap: 2rem;
         width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .body h1,
@@ -1215,7 +1239,7 @@ html {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .service-card {
@@ -1226,7 +1250,7 @@ html {
     .project {
         padding: 4rem 1rem;
         width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .project1,
@@ -1332,14 +1356,14 @@ html {
         gap: 1.5rem;
         width: 100%;
         max-width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .feature-in-1 {
         padding: 0 1rem;
         margin-bottom: 2rem;
         width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .feature-logos {
@@ -1349,13 +1373,16 @@ html {
     }
 
     .feature-logos img {
-        height: 28px;
-        width: auto;
+        height: auto;
+        width: 20%;
+        min-width: 60px;
         max-width: 100px;
     }
 
     .number {
         padding: 4rem 1rem;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     .num {
@@ -1368,20 +1395,24 @@ html {
     .num div {
         text-align: center;
         width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .num h1 {
         font-size: 2.5rem;
+        word-wrap: break-word;
     }
 
     .num p {
         font-size: 0.9rem;
+        word-wrap: break-word;
     }
 
     .feature-in-2 {
         padding: 3rem 1rem;
         width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
         text-align: center;
     }
 
@@ -1401,33 +1432,39 @@ html {
         grid-template-rows: auto;
         gap: 1rem;
         width: 100%;
-        max-width: 500px;
+        max-width: 90%;
         margin: 0 auto;
         padding: 0 1rem;
     }
 
     .gallery-images img {
         width: 100%;
-        height: 200px;
+        height: auto;
+        min-height: 180px;
+        max-height: 250px;
         grid-column: auto !important;
         grid-row: auto !important;
         transform: none !important;
         border-radius: 8px;
+        object-fit: cover;
     }
 
     .review_box {
         padding: 3rem 1rem;
         width: 100%;
         max-width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .review_box>p {
         font-size: 0.75rem;
+        word-wrap: break-word;
     }
 
     .review_box h1 {
         font-size: 2rem;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
     .review_thought {
@@ -1438,6 +1475,9 @@ html {
     .review_thought p {
         font-size: 1.1rem;
         line-height: 1.7;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .review_controls {
@@ -1445,8 +1485,10 @@ html {
     }
 
     .review_controls img {
-        width: 35px;
-        height: 35px;
+        width: 10%;
+        min-width: 30px;
+        max-width: 40px;
+        height: auto;
     }
 
     .partner_box {
@@ -1454,7 +1496,7 @@ html {
         gap: 2rem;
         padding: 3rem 1rem;
         width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
         max-width: 600px;
         margin: 0 auto;
     }
@@ -1470,26 +1512,32 @@ html {
         font-size: 2rem;
         text-align: center;
         margin-bottom: 1rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .partner_box_left p {
         font-size: 0.9rem;
         text-align: center;
         margin-bottom: 1.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .partner_box_right {
         order: 1;
         width: 100%;
-        max-width: 500px;
+        max-width: 90%;
         margin: 0 auto;
     }
 
     .partner_box_right img {
-        height: 250px;
+        height: auto;
+        min-height: 200px;
+        max-height: 350px;
         margin-top: 0;
         width: 100%;
-        max-width: 500px;
         object-fit: cover;
         border-radius: 8px;
     }
@@ -1528,7 +1576,7 @@ html {
         padding: 3rem 1rem 1.5rem;
         width: 100%;
         max-width: 100%;
-        overflow-x: auto;
+        overflow-x: hidden;
         text-align: center;
     }
 
@@ -1720,12 +1768,12 @@ html {
 
     .sponser_name {
         padding: 2rem 1rem;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .feature-in-1 {
         padding: 0 0.5rem;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
     .feature-logos {
@@ -1736,31 +1784,39 @@ html {
     }
 
     .feature-logos img {
-        height: 24px;
-        width: auto;
+        height: auto;
+        width: 18%;
+        min-width: 50px;
         max-width: 80px;
     }
 
     .number {
         padding: 3rem 1rem;
+        overflow-x: hidden;
     }
 
     .num h1 {
         font-size: 2.5rem;
+        word-wrap: break-word;
     }
 
     .num p {
         font-size: 0.85rem;
+        word-wrap: break-word;
     }
 
     .gallery-images {
-        max-width: 400px;
+        max-width: 85%;
         gap: 0.8rem;
         padding: 0 0.5rem;
     }
 
     .gallery-images img {
-        height: 160px;
+        width: 100%;
+        height: auto;
+        min-height: 140px;
+        max-height: 200px;
+        object-fit: cover;
     }
 
     .review_box {
@@ -1768,16 +1824,19 @@ html {
         max-width: 100%;
         padding: 2.5rem 1rem;
         text-align: center;
-        overflow-x: auto;
+        overflow-x: hidden;
     }
 
-    .review_box > p {
+    .review_box>p {
         font-size: 0.7rem;
+        word-wrap: break-word;
     }
 
     .review_box h1 {
         font-size: 1.6rem;
         text-align: center;
+        word-wrap: break-word;
+        hyphens: auto;
     }
 
     .review_thought {
@@ -1789,6 +1848,9 @@ html {
         font-size: 0.95rem;
         line-height: 1.6;
         text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .review_controls {
@@ -1797,31 +1859,41 @@ html {
     }
 
     .review_controls img {
-        width: 30px;
-        height: 30px;
+        width: 8%;
+        min-width: 28px;
+        max-width: 35px;
+        height: auto;
     }
 
     .partner_box {
         padding: 2.5rem 1rem;
-        max-width: 500px;
+        max-width: 90%;
     }
 
     .partner_box_left h1 {
         font-size: 1.6rem;
         text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .partner_box_left p {
         font-size: 0.85rem;
         text-align: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .partner_box_right {
-        max-width: 400px;
+        max-width: 85%;
     }
 
     .partner_box_right img {
-        height: 200px;
+        height: auto;
+        min-height: 180px;
+        max-height: 280px;
+        width: 100%;
     }
 
     .partner_box_left form {
