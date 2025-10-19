@@ -32,7 +32,13 @@ html {
 .sponser_name,
 .feature-in-1,
 .feature-in-2,
-.number {
+.number,
+.left_services,
+.service-card,
+.service-1,
+.service-2,
+.service-3,
+.service-4 {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
@@ -44,7 +50,13 @@ html {
 .sponser_name::-webkit-scrollbar,
 .feature-in-1::-webkit-scrollbar,
 .feature-in-2::-webkit-scrollbar,
-.number::-webkit-scrollbar {
+.number::-webkit-scrollbar,
+.left_services::-webkit-scrollbar,
+.service-card::-webkit-scrollbar,
+.service-1::-webkit-scrollbar,
+.service-2::-webkit-scrollbar,
+.service-3::-webkit-scrollbar,
+.service-4::-webkit-scrollbar {
     height: 6px;
 }
 
@@ -53,7 +65,13 @@ html {
 .sponser_name::-webkit-scrollbar-track,
 .feature-in-1::-webkit-scrollbar-track,
 .feature-in-2::-webkit-scrollbar-track,
-.number::-webkit-scrollbar-track {
+.number::-webkit-scrollbar-track,
+.left_services::-webkit-scrollbar-track,
+.service-card::-webkit-scrollbar-track,
+.service-1::-webkit-scrollbar-track,
+.service-2::-webkit-scrollbar-track,
+.service-3::-webkit-scrollbar-track,
+.service-4::-webkit-scrollbar-track {
     background: transparent;
 }
 
@@ -62,7 +80,13 @@ html {
 .sponser_name::-webkit-scrollbar-thumb,
 .feature-in-1::-webkit-scrollbar-thumb,
 .feature-in-2::-webkit-scrollbar-thumb,
-.number::-webkit-scrollbar-thumb {
+.number::-webkit-scrollbar-thumb,
+.left_services::-webkit-scrollbar-thumb,
+.service-card::-webkit-scrollbar-thumb,
+.service-1::-webkit-scrollbar-thumb,
+.service-2::-webkit-scrollbar-thumb,
+.service-3::-webkit-scrollbar-thumb,
+.service-4::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 3px;
 }
@@ -1101,10 +1125,15 @@ img {
 
     .left_services {
         padding: 5rem 2rem;
+        overflow-x: auto;
     }
 
     .left_services h1 {
         font-size: 3rem;
+    }
+
+    .service-card {
+        overflow-x: auto;
     }
 
     .service-1,
@@ -1112,6 +1141,7 @@ img {
     .service-3,
     .service-4 {
         gap: 2rem;
+        overflow-x: auto;
     }
 
     .project {
@@ -1313,6 +1343,13 @@ img {
     .left_services {
         padding: 4rem 1rem;
         width: 100%;
+        overflow-x: auto;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+        width: 100%;
+        overflow-x: auto;
     }
 
     .service-1,
@@ -1322,12 +1359,8 @@ img {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         width: 100%;
-        overflow-x: hidden;
-    }
-
-    .service-card {
-        padding: 1.5rem;
-        width: 100%;
+        overflow-x: auto;
+        min-width: 100%;
     }
 
     .project {
