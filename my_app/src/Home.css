@@ -838,7 +838,7 @@ img {
     max-width: 100%;
     background-color: #1a1a1a;
     color: #fff;
-    padding: 6rem 3rem;
+    padding: 0;
     text-align: center;
     overflow-x: hidden;
 }
@@ -849,6 +849,7 @@ img {
     letter-spacing: 0.15em;
     color: #999;
     margin-bottom: 1rem;
+    padding: 2rem 1rem 0 1rem;
 }
 
 .review_box h1 {
@@ -857,12 +858,13 @@ img {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 3rem;
+    padding: 0 1rem;
 }
 
 .review_thought {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     width: 100%;
 }
 
@@ -880,6 +882,7 @@ img {
     justify-content: center;
     gap: 2rem;
     margin-top: 3rem;
+    padding: 0 1rem 3rem 1rem;
 }
 
 .review_controls img {
