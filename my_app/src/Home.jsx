@@ -150,153 +150,154 @@ export default function Home() {
                 <h1>Projects</h1>
                 <div className="project1">
                     <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059eeabc4d975b8b5d560_Contemporary%20House%20at%20Dawn_Dusk.jpeg" alt="Modern Villa" />
-                    <h2>Modern Villa</h2>
-                    <p>A contemporary villa design that blends luxury with sustainability.</p>
-                    <ul>
-                        <li>Location: California</li>
-                        <li>Size: 4,000 sq ft</li>
-                        <li>Features: Solar panels, green roof, open floor plan</li>
-                    </ul>
+                    <div className="card1"><h2>Modern Villa</h2>
+                        <p>A contemporary villa design that blends luxury with sustainability.</p>
+                        <ul>
+                            <li>Location: California</li>
+                            <li>Size: 4,000 sq ft</li>
+                            <li>Features: Solar panels, green roof, open floor plan</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className="project2">
                     <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059eeabc4d975b8b5d554_Modern%20Minimalist%20House%20with%20Garden.jpeg" alt="Urban Park" />
-                    <h2>Urban Park</h2>
-                    <p>A revitalized urban park that provides green space and recreational facilities for the community.</p>
-                    <ul>
-                        <li>Location: New York City</li>
-                        <li>Size: 10 acres</li>
-                        <li>Features: Walking trails, playgrounds, community gardens</li>
-                    </ul>
+                    <div className="card2"><h2>Urban Park</h2>
+                        <p>A revitalized urban park that provides green space and recreational facilities for the community.</p>
+                        <ul>
+                            <li>Location: New York City</li>
+                            <li>Size: 10 acres</li>
+                            <li>Features: Walking trails, playgrounds, community gardens</li>
+                        </ul></div>
                 </div>
 
                 <div className="project3">
                     <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529216ec5c928ff5325ff9_project-2-img.webp" alt="Coastal Retreat" />
-                    <h2>Coastal Retreat</h2>
-                    <p>A serene coastal retreat designed for relaxation and rejuvenation.</p>
-                    <ul>
-                        <li>Location: Malibu</li>
-                        <li>Size: 3,500 sq ft</li>
-                        <li>Features: Ocean views, infinity pool, outdoor living spaces</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="number">
-                <p>BY THE NUMBERS</p>
-                <div className="num">
-                    <div className="num-item">
-                        <span className="num-value">150+</span>
-                        <span className="num-label">Projects Completed</span>
-                    </div>
-                    <div className="num-item">
-                        <span className="num-value">50+</span>
-                        <span className="num-label">Happy Clients</span>
-                    </div>
-                    <div className="num-item">
-                        <span className="num-value">10</span>
-                        <span className="num-label">Awards Won</span>
-                    </div>
-                </div>
-            </div>
-
-            <div className="sponser_name">
-                <div className="feature-in-1">
-                    <p>AS FEATURED IN</p>
-                    <div className="feature-logos">
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf66f_logo-1.svg" alt="Logo 1" />
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf671_logo-2.svg" alt="Logo 2" />
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf670_logo-3.svg" alt="Logo 3" />
+                    <div className="card3"><h2>Coastal Retreat</h2>
+                        <p>A serene coastal retreat designed for relaxation and rejuvenation.</p>
+                        <ul>
+                            <li>Location: Malibu</li>
+                            <li>Size: 3,500 sq ft</li>
+                            <li>Features: Ocean views, infinity pool, outdoor living spaces</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div className="feature-in-2" id="gallery">
-                    <p>AS FEATURED IN</p>
-                    <h1 style={{ fontSize: "150px" }}>GALLERY</h1>
-                    <div className="gallery-images">
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a0bcd445139f318bd_gallery-img-tl.webp" alt="Gallery 1" />
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3b11e36b1678dea751_gallery-img-center.webp" alt="Gallery 2" />
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a78741023142f8959_gallery-img-tr.webp" alt="Gallery 3" />
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a0ce1e4a1d6e72db8_gallery-img-bl.webp" alt="Gallery 4" />
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3ae74327df7f86a491_gallery-img-br.webp" alt="Gallery 5" />
+                <div className="number">
+                    <p>BY THE NUMBERS</p>
+                    <div className="num">
+                        <div className="num-item">
+                            <span className="num-value">150+</span>
+                            <span className="num-label">Projects Completed</span>
+                        </div>
+                        <div className="num-item">
+                            <span className="num-value">50+</span>
+                            <span className="num-label">Happy Clients</span>
+                        </div>
+                        <div className="num-item">
+                            <span className="num-value">10</span>
+                            <span className="num-label">Awards Won</span>
+                        </div>
                     </div>
-                    <div className="review_box" id="reviews">
-                        <p>HEAR OUR CLIENT</p>
-                        <h1 style={{ color: "white" }}>REVIEWS</h1>
-                        <div className="review_thought">
-                            <p>"Working with Woodland Architects was a blessing for our home. We wanted a space that felt modern but still warm and inviting, and they absolutely nailed it. We highly recommend them for architecture and design projects."</p>
-                            <div className="review_controls">
-                                <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6864d4318fa5f868620e795c_left-arrow.svg" alt="Previous" />
-                                <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6864d4f7d089681a5d9efb91_right-arrow.svg" alt="Next" />
+                </div>
+
+                <div className="sponser_name">
+                    <div className="feature-in-1">
+                        <p>AS FEATURED IN</p>
+                        <div className="feature-logos">
+                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf66f_logo-1.svg" alt="Logo 1" />
+                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf671_logo-2.svg" alt="Logo 2" />
+                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf670_logo-3.svg" alt="Logo 3" />
+                        </div>
+                    </div>
+
+                    <div className="feature-in-2" id="gallery">
+                        <p>AS FEATURED IN</p>
+                        <h1 style={{ fontSize: "150px" }}>GALLERY</h1>
+                        <div className="gallery-images">
+                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a0bcd445139f318bd_gallery-img-tl.webp" alt="Gallery 1" />
+                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3b11e36b1678dea751_gallery-img-center.webp" alt="Gallery 2" />
+                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a78741023142f8959_gallery-img-tr.webp" alt="Gallery 3" />
+                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a0ce1e4a1d6e72db8_gallery-img-bl.webp" alt="Gallery 4" />
+                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3ae74327df7f86a491_gallery-img-br.webp" alt="Gallery 5" />
+                        </div>
+                        <div className="review_box" id="reviews">
+                            <p>HEAR OUR CLIENT</p>
+                            <h1 style={{ color: "white" }}>REVIEWS</h1>
+                            <div className="review_thought">
+                                <p>"Working with Woodland Architects was a blessing for our home. We wanted a space that felt modern but still warm and inviting, and they absolutely nailed it. We highly recommend them for architecture and design projects."</p>
+                                <div className="review_controls">
+                                    <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6864d4318fa5f868620e795c_left-arrow.svg" alt="Previous" />
+                                    <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6864d4f7d089681a5d9efb91_right-arrow.svg" alt="Next" />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="partner_box" id="contact">
+                            <div className="partner_box_left">
+                                <h1>PARTNER WITH</h1>
+                                <h1> US</h1>
+                                <p>Ready to bring your architectural vision to life? Contact Woodland Architects today to schedule a consultation and take the first step toward creating your dream space.</p>
+                                <form>
+                                    <label htmlFor="name">Name</label>
+                                    <input type="text" id="name" required />
+
+                                    <label htmlFor="email">Email</label>
+                                    <input type="email" id="email" required />
+
+                                    <label htmlFor="message">Message</label>
+                                    <textarea id="message" required></textarea>
+
+                                    <button type="submit">SUBMIT</button>
+                                </form>
+                            </div>
+                            <div className="partner_box_right">
+                                <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6865758e22cd592d1f498c76_Modern%20White%20Building%20(1).jpeg" alt="Modern Building" />
+                            </div>
+                        </div>
+                        <div className="footer">
+                            <div className="footer_content1">
+                                <h2>Quick Links</h2>
+                                <ul>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#contact">Project</a></li>
+                                    <li><a href="#about">Gallery</a></li>
+                                    <li><a href="#services">Reviews</a></li>
+
+                                </ul>
+                            </div>
+                            <div className="footer_content2">
+                                <h2>Resources</h2>
+                                <ul>
+                                    <li><a href="#about">Blog</a></li>
+                                    <li><a href="#services">FAQs</a></li>
+                                    <li><a href="#contact">Support</a></li>
+                                    <li><a href="#about">Privacy Policy</a></li>
+                                    <li><a href="#services">Terms of Service</a></li>
+                                </ul>
+                            </div>
+                            <div className="footer_content3">
+                                <h2>Contact Us</h2>
+                                <ul>
+                                    <li>Email: info@woodlandarchitects.com</li>
+                                    <li>Phone: (123) 456-7890</li>
+                                    <li>Address: 1234 Architecture Lane, Design City, DC 56789</li>
+                                </ul>
+                            </div>
+                            <div className="footer_content4">
+                                <h2>Newsletter</h2>
+                                <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                                <form>
+                                    <label style={{ fontFamily: "font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;" }} htmlFor="email">Your Email Address</label>
+                                    <input style={{ border: "1px solid #ccc", backgroundColor: "#e9e9e9ff", borderRadius: "4px", padding: "0.5rem", width: "100%" }} type="email" id="email" required />
+                                    <button type="submit">Subscribe</button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div className="partner_box" id="contact">
-                        <div className="partner_box_left">
-                            <h1>PARTNER WITH</h1>
-                            <h1> US</h1>
-                            <p>Ready to bring your architectural vision to life? Contact Woodland Architects today to schedule a consultation and take the first step toward creating your dream space.</p>
-                            <form>
-                                <label htmlFor="name">Name</label>
-                                <input type="text" id="name" required />
-
-                                <label htmlFor="email">Email</label>
-                                <input type="email" id="email" required />
-
-                                <label htmlFor="message">Message</label>
-                                <textarea id="message" required></textarea>
-
-                                <button type="submit">SUBMIT</button>
-                            </form>
-                        </div>
-                        <div className="partner_box_right">
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6865758e22cd592d1f498c76_Modern%20White%20Building%20(1).jpeg" alt="Modern Building" />
-                        </div>
-                    </div>
-                    <div className="footer">
-                        <div className="footer_content1">
-                            <h2>Quick Links</h2>
-                            <ul>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#services">Services</a></li>
-                                <li><a href="#contact">Project</a></li>
-                                <li><a href="#about">Gallery</a></li>
-                                <li><a href="#services">Reviews</a></li>
-
-                            </ul>
-                        </div>
-                        <div className="footer_content2">
-                            <h2>Resources</h2>
-                            <ul>
-                                <li><a href="#about">Blog</a></li>
-                                <li><a href="#services">FAQs</a></li>
-                                <li><a href="#contact">Support</a></li>
-                                <li><a href="#about">Privacy Policy</a></li>
-                                <li><a href="#services">Terms of Service</a></li>
-                            </ul>
-                        </div>
-                        <div className="footer_content3">
-                            <h2>Contact Us</h2>
-                            <ul>
-                                <li>Email: info@woodlandarchitects.com</li>
-                                <li>Phone: (123) 456-7890</li>
-                                <li>Address: 1234 Architecture Lane, Design City, DC 56789</li>
-                            </ul>
-                        </div>
-                        <div className="footer_content4">
-                            <h2>Newsletter</h2>
-                            <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                            <form>
-                                <label style={{ fontFamily: "font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;" }} htmlFor="email">Your Email Address</label>
-                                <input style={{ border: "1px solid #ccc", backgroundColor: "#e9e9e9ff", borderRadius: "4px", padding: "0.5rem", width: "100%" }} type="email" id="email" required />
-                                <button type="submit">Subscribe</button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    );
+            );
 }
 
 

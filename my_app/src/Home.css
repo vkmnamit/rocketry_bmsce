@@ -356,6 +356,17 @@ img {
     gap: 1rem;
 }
 
+.service-1-left,
+.service-3-left {
+    margin-right: 2rem;
+}
+
+
+.service-2-left,
+.service-4-left {
+    margin-left: 2rem;
+}
+
 .service-1-left h2,
 .service-2-left h2,
 .service-3-left h2,
@@ -417,18 +428,16 @@ img {
     border-radius: 8px;
 }
 
-
+/* Service 1 & 3: Image on right - add margin on left to balance card margin */
 .service-1-right img,
 .service-3-right img {
-    padding-left: 0.5rem;
-    padding-right: 2.5rem;
+    margin-left: 2rem;
 }
 
-
+/* Service 2 & 4: Image on left - add margin on right to balance card margin */
 .service-2-right img,
 .service-4-right img {
-    padding-left: 2.5rem;
-    padding-right: 0.5rem;
+    margin-right: 2rem;
 }
 
 
@@ -497,8 +506,23 @@ img {
     position: absolute;
     z-index: 2;
     max-width: 340px;
+    transition: all 0.5s ease;
 }
 
+.project1,
+.project2,
+.project3 {
+
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 650px;
+    overflow: visible;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .project1 h2 {
     top: calc(50% - 90px);
