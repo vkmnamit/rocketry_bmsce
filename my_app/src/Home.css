@@ -306,6 +306,23 @@ img {
     align-items: center;
 }
 
+/* Alternate layout: service-2 and service-4 have image on left */
+.service-2 {
+    direction: rtl;
+}
+
+.service-2>* {
+    direction: ltr;
+}
+
+.service-4 {
+    direction: rtl;
+}
+
+.service-4>* {
+    direction: ltr;
+}
+
 .service-1-left,
 .service-2-left,
 .service-3-left,
@@ -374,6 +391,20 @@ img {
     height: 400px;
     object-fit: cover;
     border-radius: 8px;
+}
+
+
+.service-1-right img,
+.service-3-right img {
+    padding-left: 0.5rem;
+    padding-right: 2.5rem;
+}
+
+
+.service-2-right img,
+.service-4-right img {
+    padding-left: 2.5rem;
+    padding-right: 0.5rem;
 }
 
 
@@ -1595,6 +1626,7 @@ img {
         max-height: 350px;
         margin-top: 0;
         width: 100%;
+
         object-fit: cover;
         border-radius: 8px;
     }
