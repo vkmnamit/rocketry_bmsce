@@ -1,0 +1,185 @@
+.projects-hero {
+    height: 50vh;
+    background: url('https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.projects-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 24, 39, 0.7); /* Navy Overlay */
+}
+
+.projects-hero .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.projects-hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.projects-hero p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.projects-content {
+    background: #f8f9fa;
+    padding-top: 5rem;
+}
+
+.project-category {
+    margin-bottom: 6rem;
+}
+
+.cat-title {
+    font-size: 2.2rem;
+    color: #111827;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.cat-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
+}
+
+.project-list {
+    display: grid;
+    gap: 3rem;
+}
+
+.project-card {
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.p-img {
+    height: 100%;
+}
+
+.p-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p-info {
+    padding: 3.5rem;
+}
+
+.p-year {
+    display: block;
+    font-weight: 700;
+    color: #F97316;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.p-info h3 {
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.p-info p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #111827;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: #F97316;
+}
+
+/* Past Projects Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-small-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.project-small-card .p-img {
+    height: 200px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.project-small-card h3 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.project-small-card .p-year {
+    margin-bottom: 1rem;
+}
+
+.project-small-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-small-card a {
+    color: #F97316;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+    .p-info { padding: 2rem; }
+    .projects-hero h1 { font-size: 2.5rem; }
+}

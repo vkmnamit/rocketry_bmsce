@@ -1,0 +1,168 @@
+/* PARTNERS PAGE CSS */
+
+.partners-page {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.dark-header {
+    background: #001B3D; /* Navy theme consistency */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.partners-main {
+    padding-top: 100px;
+}
+
+/* Sections Split Layouts */
+.partners-hero, .sponsor-category {
+    padding: 8rem 0;
+}
+
+.hero-split, .category-split {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.hero-logo-cloud, .category-text {
+    flex: 1;
+}
+
+.hero-text-side, .category-visual {
+    flex: 1;
+}
+
+/* Logo Grid Cloud */
+.cloud-subtitle {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.logo-grid-cloud {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    align-items: center;
+}
+
+.logo-grid-cloud img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+    filter: grayscale(1);
+    opacity: 0.8;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-grid-cloud img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* Hero Text Side */
+.hero-text-side h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height:1.1;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.hero-text-side p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+}
+
+/* Sponsor Category Styling */
+.sponsor-category {
+    background-color: #fdf6f5; /* Light subtle background */
+}
+
+.platinum-bg {
+    background-color: #ffffff; /* Alternate background for categories */
+}
+
+.cat-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.sponsor-name-highlight {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #6d8dbd; /* Blue accent matching USYD */
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.large-sponsor-logo {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* List Style Sponsor Item */
+.sponsor-item {
+    margin-bottom: 3rem;
+}
+
+.item-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #6d8dbd;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.item-desc {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Logos Stack Vertical Layout */
+.stack-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.stack-logo {
+    max-width: 70%;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-split, .category-split {
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+    }
+    .hero-text-side h1, .cat-title {
+        font-size: 2.5rem;
+    }
+    .logo-grid-cloud {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-split {
+        flex-direction: column-reverse;
+    }
+}

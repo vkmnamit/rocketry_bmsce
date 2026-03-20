@@ -1,0 +1,146 @@
+/* MEDIA PAGE CSS */
+
+.media-page {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.dark-header {
+    background: #001B3D;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.media-main {
+    padding-top: 100px;
+}
+
+/* Section Split Styling */
+.media-section {
+    padding: 10rem 0; /* More spacing between sections */
+}
+
+.split-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    flex-direction: row; /* Default: Text Left, Visual Right */
+}
+
+/* Alternating Criss-Cross purely via CSS */
+.media-section:nth-child(even) .split-wrapper {
+    flex-direction: row-reverse; /* Flip every even section */
+}
+
+.media-visual {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+}
+
+.media-text {
+    flex: 0.8;
+}
+
+/* Image Visuals */
+.portrait-img {
+    width: 70%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.media-subtitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.media-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+}
+
+.media-description {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    line-height: 1.8;
+}
+
+.media-description-alt {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    line-height: 1.9;
+}
+
+/* Video Placeholder Layout */
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.video-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background-color: #F97316;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 5;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.15);
+    background-color: #ea580c;
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 30px solid white;
+    margin-left: 10px;
+}
+
+/* Footer styles moved to index.css */
+
+@media (max-width: 1024px) {
+    .split-wrapper, .media-section:nth-child(even) .split-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+    }
+    .media-text h1 { font-size: 2.5rem; }
+    .portrait-img { width: 100%; }
+}
