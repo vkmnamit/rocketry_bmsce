@@ -1,0 +1,228 @@
+.project-detail-root {
+    background: #ffffff;
+    padding-top: 80px; /* Offset for navbar */
+}
+
+.project-hero {
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.project-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(17, 24, 39, 0.4), rgba(17, 24, 39, 0.8));
+}
+
+.project-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.project-year-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #F97316;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.project-hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.hero-desc {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+.overview-text h2 {
+    font-size: 2.2rem;
+    color: #111827;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.main-desc {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #1e293b;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.contribution-list h3 {
+    font-size: 1rem;
+    color: #F97316;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.contribution-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contribution-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    font-weight: 400;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.history-block {
+    padding: 8rem 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.history-text h2 {
+    font-size: 2.2rem;
+    color: #111827;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.history-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155;
+}
+
+.rocket-stat-image img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+}
+
+.technical-leads h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #111827;
+    margin-bottom: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.leads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+}
+
+.lead-card {
+    text-align: center;
+}
+
+.lead-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.lead-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.lead-info h3 {
+    font-size: 1.2rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.lead-info p {
+    font-size: 0.9rem;
+    color: #F97316;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lead-card:hover .lead-img img {
+    transform: scale(1.05);
+}
+
+.project-footer {
+    padding: 4rem 0;
+    border-top: 1px solid #f1f5f9;
+}
+
+.back-link {
+    color: #111827;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #F97316;
+}
+
+.not-found {
+    padding: 10rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #F97316;
+    font-weight: 800;
+}
+
+@media (max-width: 1024px) {
+    .overview-grid, .history-block { grid-template-columns: 1fr; gap: 4rem; }
+    .project-hero h1 { font-size: 3rem; }
+    .project-hero { height: 60vh; }
+}

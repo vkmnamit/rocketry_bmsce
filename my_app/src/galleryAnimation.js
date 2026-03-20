@@ -5,7 +5,6 @@ export const initGalleryAnimation = () => {
         const galleryImages = document.querySelector('.gallery-images');
 
         if (!gallerySection || !galleryImages) {
-            console.log('Gallery elements not found');
             return;
         }
 
@@ -18,7 +17,6 @@ export const initGalleryAnimation = () => {
             const translateY = -scrollProgress * 150; // Move up by 150px max
 
             galleryImages.style.transform = `translateY(${translateY}px)`;
-            console.log('Gallery transform:', translateY);
         }
     };
 

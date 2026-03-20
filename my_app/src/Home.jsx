@@ -1,11 +1,53 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import { initScrollAnimation } from "./scrollAnimation";
 import { initGalleryAnimation } from "./galleryAnimation";
 
-export default function Home() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const CountUp = ({ end, duration = 2000, suffix = "" }) => {
+    const [count, setCount] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const elementRef = (node) => {
+        if (node) {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                        observer.unobserve(node);
+                    }
+                },
+                { threshold: 0.1 }
+            );
+            observer.observe(node);
+        }
+    };
 
+    useEffect(() => {
+        if (!isVisible) return;
+
+        let startTime;
+        let animationFrame;
+
+        const updateCount = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const percentage = Math.min(progress / duration, 1);
+
+            setCount(Math.floor(percentage * end));
+
+            if (percentage < 1) {
+                animationFrame = requestAnimationFrame(updateCount);
+            }
+        };
+
+        animationFrame = requestAnimationFrame(updateCount);
+        return () => cancelAnimationFrame(animationFrame);
+    }, [isVisible, end, duration]);
+
+    return <span ref={elementRef}>{count}{suffix}</span>;
+};
+
+export default function Home() {
     useEffect(() => {
         const scrollCleanup = initScrollAnimation();
         const galleryCleanup = initGalleryAnimation();
@@ -16,291 +58,277 @@ export default function Home() {
         };
     }, []);
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
-
-    const closeMobileMenu = () => {
-        setIsMobileMenuOpen(false);
-    };
-
     return (
-        <div>
-            <div className="header">
-                <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059b4ced709fa6285f993_wp-logo.svg" alt="Woodland Logo" />
-                <nav>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#gallery">Gallery</a>
-                    <a href="#reviews">Reviews</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-                <button className="hamburger" onClick={toggleMobileMenu} aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-
-            {/* Mobile Menu */}
-            <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-                <nav>
-                    <a href="#about" onClick={closeMobileMenu}>About</a>
-                    <a href="#services" onClick={closeMobileMenu}>Services</a>
-                    <a href="#projects" onClick={closeMobileMenu}>Projects</a>
-                    <a href="#gallery" onClick={closeMobileMenu}>Gallery</a>
-                    <a href="#reviews" onClick={closeMobileMenu}>Reviews</a>
-                    <a href="#contact" onClick={closeMobileMenu}>Contact</a>
-                </nav>
-            </div>
-
-            <div className="Main_img">
-                <h1>Woodland</h1>
-            </div>
-
-            <div className="body" id="about">
-                <h1>About</h1>
-                <p>We are a design studio focused on creating beautiful and functional spaces.
-                    Our team is dedicated to delivering high-quality design solutions that meet the unique needs of each client.
-                    We believe that good design should be accessible to everyone.
-                    we strive to blend aesthetics with practicality, ensuring that every project we undertake not only looks stunning but also serves its intended purpose effectively.
-                </p>
-                <p>we are committed to sustainability and aim to minimize our environmental impact through thoughtful design and material selection.
-                    We prioritize eco-friendly practices and strive to create spaces that are not only beautiful but also sustainable.
-                    Our goal is to leave a positive legacy for future generations while enhancing the quality of life for our clients.
-
-                </p>
-            </div>
-
-            <div className="services" id="services">
-                <div className="left_services">
-                    <h1>Services</h1>
+        <div className="home-root">
+            {/* HERO SECTION */}
+            <div className="Main_img" id="hero">
+                <div className="hero-content">
+                    <div className="hero-text-block">
+                        <h1>BMSCE Rocketry Team</h1>
+                        <p className="hero-tagline">Engineering the Future of High-Power Rocketry</p>
+                        <a href="#about" className="learn-more-btn">LEARN MORE</a>
+                    </div>
+                    <div className="hero-visual">
+                        <img src="" alt="Rocket Logo" className="hero-rocket-img" />
+                    </div>
                 </div>
-                <div className="right-services">
-                    <div className="service-card">
-                        <div className="service-1">
-                            <div className="service-1-left">
-                                <h2>01 Architecture</h2>
-                                <p>We design buildings that are not only functional but also aesthetically pleasing.</p>
-                                <ul>
-                                    <li>Conceptual Design</li>
-                                    <li>Design Development</li>
-                                    <li>Construction Documentation</li>
-                                    <li>Project Management</li>
-                                </ul>
+            </div>
+
+            {/* ABOUT US SECTION */}
+            <div className="about-us-section" id="about">
+                <div className="container">
+                    <h2 className="section-title-alt">About Us</h2>
+                    <p className="mission-text">At BMSCE Rocketry Team, we design, manufacture, and launch high-power sounding rockets to a world-class standard.</p>
+
+                    <div className="about-grid">
+                        <div className="about-info-blocks">
+                            <div className="info-block">
+                                <div className="info-icon">⭐</div>
+                                <div className="info-text">
+                                    <h3>THE TEAM</h3>
+                                    <p>We are a highly-technical team of student engineers who design, manufacture and test high power sounding rockets to compete in competitions.</p>
+                                </div>
                             </div>
-                            <div className="service-1-right">
-                                <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685286491a3e4ce9a7b39573_service-1-img.webp" alt="Architecture" />
+                            <div className="info-block">
+                                <div className="info-icon">👁️</div>
+                                <div className="info-text">
+                                    <h3>OUR VISION</h3>
+                                    <p>Our passionate team strives to innovate and push the boundaries of the sounding rocket environment everyday.</p>
+                                </div>
+                            </div>
+                            <div className="info-block">
+                                <div className="info-icon">🚀</div>
+                                <div className="info-text">
+                                    <h3>OUR ROCKETS</h3>
+                                    <p>Our rockets are designed for performance and built with integrity. We take a systems engineering approach.</p>
+                                </div>
+                            </div>
+                            <div className="info-block">
+                                <div className="info-icon">🏢</div>
+                                <div className="info-text">
+                                    <h3>OUR SPONSORS</h3>
+                                    <p>BMSCE Rocketry Team would not have been able to achieve all of our major milestones without our sponsors.</p>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="service-2">
-                            <div className="service-2-left">
-                                <h2>02 Interior Design</h2>
-                                <p>Our interior design services focus on creating functional and beautiful spaces.</p>
-                                <ul>
-                                    <li>Space Planning</li>
-                                    <li>Furniture Selection</li>
-                                    <li>Color Consultation</li>
-                                    <li>Lighting Design</li>
-                                </ul>
-                            </div>
-                            <div className="service-2-right">
-                                <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6852860d55b59b8474e4a795_service-2-img.webp" alt="Interior Design" />
-                            </div>
-                        </div>
-
-                        <div className="service-3">
-                            <div className="service-3-left">
-                                <h2>03 Landscape Design</h2>
-                                <p>We create outdoor spaces that are both beautiful and sustainable.</p>
-                                <ul>
-                                    <li>Site Analysis</li>
-                                    <li>Plant Selection</li>
-                                    <li>Irrigation Design</li>
-                                    <li>Hardscape Design</li>
-                                </ul>
-                            </div>
-                            <div className="service-3-right">
-                                <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6852855e03e1fcb4ec5b46c3_service-3-img.webp" alt="Landscape Design" />
-                            </div>
-                        </div>
-
-                        <div className="service-4">
-                            <div className="service-4-left">
-                                <h2>04 Urban Design</h2>
-                                <p>We plan and design urban spaces that are functional, sustainable, and beautiful.</p>
-                                <ul>
-                                    <li>Urban Planning</li>
-                                    <li>Public Space Design</li>
-                                    <li>Transportation Planning</li>
-                                    <li>Community Engagement</li>
-                                </ul>
-                            </div>
-                            <div className="service-4-right">
-                                <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685285ca74c32db80127f923_service-4-img.webp" alt="Urban Design" />
+                        <div className="about-image-side">
+                            <div className="image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80&w=800" alt="Rocket Launch" />
+                                <div className="image-accent-bg"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="project" id="projects">
-                <h1>Projects</h1>
-                <div className="project1">
-                    <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059eeabc4d975b8b5d560_Contemporary%20House%20at%20Dawn_Dusk.jpeg" alt="Modern Villa" />
-                    <div className="card1"><h2>Modern Villa</h2>
-                        <p>A contemporary villa design that blends luxury with sustainability.</p>
-                        <ul>
-                            <li>Location: California</li>
-                            <li>Size: 4,000 sq ft</li>
-                            <li>Features: Solar panels, green roof, open floor plan</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="project2">
-                    <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059eeabc4d975b8b5d554_Modern%20Minimalist%20House%20with%20Garden.jpeg" alt="Urban Park" />
-                    <div className="card2"><h2>Urban Park</h2>
-                        <p>A revitalized urban park that provides green space and recreational facilities for the community.</p>
-                        <ul>
-                            <li>Location: New York City</li>
-                            <li>Size: 10 acres</li>
-                            <li>Features: Walking trails, playgrounds, community gardens</li>
-                        </ul></div>
-                </div>
-
-                <div className="project3">
-                    <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529216ec5c928ff5325ff9_project-2-img.webp" alt="Coastal Retreat" />
-                    <div style={{ marginRight: "30px" }} className="card3"><h2>Coastal Retreat</h2>
-                        <p>A serene coastal retreat designed for relaxation and rejuvenation.</p>
-                        <ul>
-                            <li>Location: Malibu</li>
-                            <li>Size: 3,500 sq ft</li>
-                            <li>Features: Ocean views, infinity pool, outdoor living spaces</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="number">
-                    <p>BY THE NUMBERS</p>
-                    <div className="num">
-                        <div className="num-item">
-                            <span className="num-value">150+</span>
-                            <span className="num-label">Projects Completed</span>
+            {/* QUICK LINKS SECTION */}
+            <div className="quick-links-section">
+                <div className="container">
+                    <div className="quick-link-cards">
+                        <div className="q-card">
+                            <div className="q-image">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400" alt="Members working on rocket" />
+                            </div>
+                            <div className="q-content">
+                                <h3>Our Team</h3>
+                                <p>Behind every project is a team of highly talented and dedicated student engineers.</p>
+                                <Link to="/team" className="q-btn">LEARN MORE</Link>
+                            </div>
                         </div>
-                        <div className="num-item">
-                            <span className="num-value">50+</span>
-                            <span className="num-label">Happy Clients</span>
-                        </div>
-                        <div className="num-item">
-                            <span className="num-value">10</span>
-                            <span className="num-label">Awards Won</span>
+                        <div className="q-card">
+                            <div className="q-image">
+                                <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?auto=format&fit=crop&q=80&w=400" alt="Media display" />
+                            </div>
+                            <div className="q-content">
+                                <h3>Media Releases</h3>
+                                <p>View our dedicated media gallery showcasing our projects throughout the years.</p>
+                                <Link to="/media" className="q-btn">VIEW</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div className="sponser_name">
-                    <div className="feature-in-1">
-                        <p>AS FEATURED IN</p>
-                        <div className="feature-logos">
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf66f_logo-1.svg" alt="Logo 1" />
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf671_logo-2.svg" alt="Logo 2" />
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/685059e3d57de667f9baf670_logo-3.svg" alt="Logo 3" />
+            <section className="dashboard-stats" style={{ padding: "8rem 3rem", background: "#ffffff" }}>
+                <div className="container" style={{ textAlign: "center" }}>
+                    <h2 style={{ fontSize: "0.85rem", color: "#666", fontWeight: "700", letterSpacing: "4px", marginBottom: "4rem", textTransform: "uppercase" }}>By The Numbers</h2>
+                    <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
+                        <div className="stat-card">
+                            <h2 style={{ color: "#111827", fontSize: "4.5rem", fontWeight: "900", marginBottom: "0.5rem" }}><CountUp end={150} suffix="+" /></h2>
+                            <p style={{ color: "#4a5568", fontWeight: "500", textTransform: "lowercase", letterSpacing: "1px" }}>projects completed</p>
                         </div>
-                    </div>
-
-                    <div className="feature-in-2" id="gallery">
-                        <p>AS FEATURED IN</p>
-                        <h1 style={{ fontSize: "150px" }}>GALLERY</h1>
-                        <div className="gallery-images">
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a0bcd445139f318bd_gallery-img-tl.webp" alt="Gallery 1" />
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3b11e36b1678dea751_gallery-img-center.webp" alt="Gallery 2" />
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a78741023142f8959_gallery-img-tr.webp" alt="Gallery 3" />
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3a0ce1e4a1d6e72db8_gallery-img-bl.webp" alt="Gallery 4" />
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/68529b3ae74327df7f86a491_gallery-img-br.webp" alt="Gallery 5" />
+                        <div className="stat-card">
+                            <h2 style={{ color: "#111827", fontSize: "4.5rem", fontWeight: "900", marginBottom: "0.5rem" }}><CountUp end={50} suffix="+" /></h2>
+                            <p style={{ color: "#4a5568", fontWeight: "500", textTransform: "lowercase", letterSpacing: "1px" }}>happy clients</p>
+                        </div>
+                        <div className="stat-card">
+                            <h2 style={{ color: "#111827", fontSize: "4.5rem", fontWeight: "900", marginBottom: "0.5rem" }}><CountUp end={10} /></h2>
+                            <p style={{ color: "#4a5568", fontWeight: "500", textTransform: "lowercase", letterSpacing: "1px" }}>awards won</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div className="review_box" id="reviews">
-                    <p>HEAR OUR CLIENT</p>
-                    <h1 style={{ color: "white" }}>REVIEWS</h1>
-                    <div className="review_thought">
-                        <p>"Working with Woodland Architects was a blessing for our home. We wanted a space that felt modern but still warm and inviting, and they absolutely nailed it. We highly recommend them for architecture and design projects."</p>
-                        <div className="review_controls">
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6864d4318fa5f868620e795c_left-arrow.svg" alt="Previous" />
-                            <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6864d4f7d089681a5d9efb91_right-arrow.svg" alt="Next" />
+            <div className="project" id="projects" style={{ background: "white" }}>
+                <div className="container">
+                    <h1 style={{ color: "#1a1a1a" }}>Current Projects</h1>
+                    <div className="project1">
+                        <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=800" alt="Rocket Model" />
+                        <div className="card1"><h2>Solid Fuel Rocket Mk-1</h2>
+                            <p>Our primary launch vehicle for high-altitude research.</p>
+                        </div>
+                    </div>
+                    <div className="project2">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Electronics module" />
+                        <div className="card2"><h2>Avionics System</h2>
+                            <p>State-of-the-art flight control and real-time telemetry system.</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div className="partner_box" id="contact">
-                    <div className="partner_box_left">
-                        <h1>PARTNER WITH</h1>
-                        <h1> US</h1>
-                        <p>Ready to bring your architectural vision to life? Contact Woodland Architects today to schedule a consultation and take the first step toward creating your dream space.</p>
-                        <form>
-                            <label htmlFor="name">Name</label>
-                            <input type="text" id="name" required />
-
-                            <label htmlFor="email">Email</label>
-                            <input type="email" id="email" required />
-
-                            <label htmlFor="message">Message</label>
-                            <textarea id="message" required></textarea>
-
-                            <button type="submit">SUBMIT</button>
-                        </form>
-                    </div>
-                    <div className="partner_box_right">
-                        <img src="https://cdn.prod.website-files.com/684afec0a4c0b1f83bda33ea/6865758e22cd592d1f498c76_Modern%20White%20Building%20(1).jpeg" alt="Modern Building" />
+            <section className="sponser_name" style={{ background: "#ffffff", padding: "6rem 0" }}>
+                <div className="feature-in-1" style={{ textAlign: "center" }}>
+                    <p style={{ fontSize: "0.85rem", color: "#666", fontWeight: "700", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "3rem" }}>As Featured In</p>
+                    <div className="marquee">
+                        <div className="marquee-content">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/HGTV_Logo_2010.svg/2560px-HGTV_Logo_2010.svg.png" alt="HGTV Logo" style={{ height: "40px" }} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Exp_realty_logo.svg/2560px-Exp_realty_logo.svg.png" alt="Exp Realty Logo" style={{ height: "40px" }} />
+                            <img src="https://logos-world.net/wp-content/uploads/2021/08/Fortune-Magazine-Logo.png" alt="Fortune Logo" style={{ height: "40px" }} />
+                            {/* Duplicate for infinite loop */}
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/HGTV_Logo_2010.svg/2560px-HGTV_Logo_2010.svg.png" alt="HGTV Logo" style={{ height: "40px" }} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Exp_realty_logo.svg/2560px-Exp_realty_logo.svg.png" alt="Exp Realty Logo" style={{ height: "40px" }} />
+                            <img src="https://logos-world.net/wp-content/uploads/2021/08/Fortune-Magazine-Logo.png" alt="Fortune Logo" style={{ height: "40px" }} />
+                            {/* More duplicates to fill space */}
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/HGTV_Logo_2010.svg/2560px-HGTV_Logo_2010.svg.png" alt="HGTV Logo" style={{ height: "40px" }} />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Exp_realty_logo.svg/2560px-Exp_realty_logo.svg.png" alt="Exp Realty Logo" style={{ height: "40px" }} />
+                            <img src="https://logos-world.net/wp-content/uploads/2021/08/Fortune-Magazine-Logo.png" alt="Fortune Logo" style={{ height: "40px" }} />
+                        </div>
                     </div>
                 </div>
-                <div className="footer">
-                    <div className="footer_content1">
+            </section>
+
+            <section className="technical-resources-section" id="resources">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 className="section-title-alt">Technical Resources</h2>
+                        <p className="section-subtitle">Research publications, engineering documentation, educational material and compliance reference.</p>
+                    </div>
+
+                    <div className="resources-grid">
+                        <div className="resource-category-card">
+                            <div className="category-header">
+                                <div className="category-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                </div>
+                                <h3>Research Papers</h3>
+                            </div>
+                            <div className="resource-list">
+                                <div className="resource-item">
+                                    <span className="file-name">Aerodynamic Analysis of Subsonic Rockets</span>
+                                    <button className="download-btn">Download PDF</button>
+                                </div>
+                                <div className="resource-item">
+                                    <span className="file-name">CFD Modeling for Fin Optimization</span>
+                                    <button className="download-btn">Download PDF</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="resource-category-card">
+                            <div className="category-header">
+                                <div className="category-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                </div>
+                                <h3>Technical Reports</h3>
+                            </div>
+                            <div className="resource-list">
+                                <div className="resource-item">
+                                    <span className="file-name">Static Fire Test Report - Q1 2024</span>
+                                    <button className="download-btn">Download PDF</button>
+                                </div>
+                                <div className="resource-item">
+                                    <span className="file-name">Avionics Integration Review</span>
+                                    <button className="download-btn">Download PDF</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="resource-category-card">
+                            <div className="category-header">
+                                <div className="category-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10v6M6 12h12"></path><rect x="6" y="4" width="12" height="16" rx="2"></rect></svg>
+                                </div>
+                                <h3>HPR 101 (Educational)</h3>
+                            </div>
+                            <div className="resource-list">
+                                <div className="resource-item">
+                                    <span className="file-name">Introduction to High Power Rocketry</span>
+                                    <button className="download-btn">Download PDF</button>
+                                </div>
+                                <div className="resource-item">
+                                    <span className="file-name">Motor Classification & Safety Guide</span>
+                                    <button className="download-btn">Download PDF</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="resource-category-card">
+                            <div className="category-header">
+                                <div className="category-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                                <h3>Safety Compliance</h3>
+                                <p className="category-subtitle">Legal & Safety Documentation</p>
+                            </div>
+                            <div className="resource-list">
+                                <div className="resource-item">
+                                    <span className="file-name">Range Safety Regulations 2024</span>
+                                    <button className="download-btn">Download PDF</button>
+                                </div>
+                                <div className="resource-item">
+                                    <span className="file-name">Legal Compliance & Liability Docs</span>
+                                    <button className="download-btn">Download PDF</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer className="footer" style={{ background: "#111827", color: "white" }}>
+                <div className="footer-content container">
+                    <div className="footer-col">
                         <h2>Quick Links</h2>
                         <ul>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#contact">Project</a></li>
-                            <li><a href="#about">Gallery</a></li>
-                            <li><a href="#services">Reviews</a></li>
-
+                            <li><Link to="/team">TEAM</Link></li>
+                            <li><a href="#projects">PARTNERS</a></li>
+                            <li><Link to="/projects">PROJECTS</Link></li>
+                            <li><Link to="/media">MEDIA</Link></li>
+                            <li><a href="#resources">RESOURCES</a></li>
                         </ul>
                     </div>
-                    <div className="footer_content2">
-                        <h2>Resources</h2>
-                        <ul>
-                            <li><a href="#about">Blog</a></li>
-                            <li><a href="#services">FAQs</a></li>
-                            <li><a href="#contact">Support</a></li>
-                            <li><a href="#about">Privacy Policy</a></li>
-                            <li><a href="#services">Terms of Service</a></li>
-                        </ul>
+                    <div className="footer-col">
+                        <h2>Contact</h2>
+                        <p>📍 BMSCE, Bangalore</p>
+                        <p>📧 rocketry@bmsce.ac.in</p>
                     </div>
-                    <div className="footer_content3">
-                        <h2>Contact Us</h2>
-                        <ul>
-                            <li>Email: info@woodlandarchitects.com</li>
-                            <li>Phone: (123) 456-7890</li>
-                            <li>Address: 1234 Architecture Lane, Design City, DC 56789</li>
-                        </ul>
-                    </div>
-                    <div className="footer_content4">
-                        <h2>Newsletter</h2>
-                        <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                        <form>
-                            <label style={{ fontFamily: "font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;" }} htmlFor="email">Your Email Address</label>
-                            <input style={{ border: "1px solid #ccc", backgroundColor: "#e9e9e9ff", borderRadius: "4px", padding: "0.5rem", width: "100%" }} type="email" id="email" required />
-                            <button type="submit">Subscribe</button>
-                        </form>
+                    <div className="footer-col">
+                        <h2>Connect</h2>
+                        <div className="social-links">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="social-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="social-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div className="footer-bottom">
+                    © 2026 BMSCE Rocketry Team
+                </div>
+            </footer>
+        </div >
     );
 }
-
-
