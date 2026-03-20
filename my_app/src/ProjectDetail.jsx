@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Navbar from './Navbar.jsx';
 import { projectsData } from './projectsData';
 import './ProjectDetail.css';
 
@@ -17,6 +18,7 @@ const ProjectDetail = () => {
 
     return (
         <div className="project-detail-root">
+            <Navbar />
             <div className="project-hero" style={{ backgroundImage: `url(${project.heroImage})` }}>
                 <div className="hero-overlay"></div>
                 <div className="container">
