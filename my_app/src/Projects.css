@@ -63,7 +63,7 @@
     left: 0;
     width: 60px;
     height: 4px;
-    background: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
+    background: linear-gradient(135deg, #FFC107 0%, #FBBF24 100%);
 }
 
 .project-list {
@@ -97,7 +97,7 @@
 .p-year {
     display: block;
     font-weight: 700;
-    color: #F97316;
+    color: #FFC107;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
 }
@@ -128,7 +128,7 @@
 }
 
 .view-btn:hover {
-    background: #F97316;
+    background: #FFC107;
 }
 
 /* Past Projects Grid */
@@ -169,7 +169,7 @@
 }
 
 .project-small-card a {
-    color: #F97316;
+    color: #FFC107;
     text-decoration: none;
     font-weight: 700;
     font-size: 0.85rem;
