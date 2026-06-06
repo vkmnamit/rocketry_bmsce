@@ -32,8 +32,27 @@ const Navbar = () => {
         "Callistemon", "Ironbark", "Firetail"
     ];
 
+    // pages that look better with a dark header (white links)
+    const darkHeaderPages = ['/partners', '/media'];
+
+    // scroll state - header becomes opaque after user scrolls down
+    const [isScrolled, setIsScrolled] = useState(false);
+    useEffect(() => {
+        const onScroll = () => setIsScrolled(window.scrollY > 40);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    // dark-header takes precedence; otherwise use opaque when scrolled
+    const headerTheme = darkHeaderPages.includes(location.pathname)
+        ? 'dark-header'
+        : (isScrolled ? 'opaque' : '');
+
+    const isHome = location.pathname === '/';
+
     return (
-        <header className="header">
+        <header className={`header ${headerTheme} ${isHome ? 'transparent-on-home' : ''}`}>
             <div className="logo-container">
                 <Link to="/">
                     <img
@@ -45,6 +64,7 @@ const Navbar = () => {
             </div>
 
             <nav className="desktop-nav">
+                <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>HOME</NavLink>
                 <NavLink to="/team" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>TEAM</NavLink>
                 <NavLink to="/partners" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>PARTNERS</NavLink>
 
@@ -77,6 +97,7 @@ const Navbar = () => {
 
             <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
                 <nav>
+                    <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>HOME</NavLink>
                     <NavLink to="/team" className={({ isActive }) => isActive ? "active" : ""}>TEAM</NavLink>
                     <NavLink to="/partners" className={({ isActive }) => isActive ? "active" : ""}>PARTNERS</NavLink>
                     <NavLink to="/projects" className={({ isActive }) => isActive ? "active" : ""}>PROJECTS</NavLink>

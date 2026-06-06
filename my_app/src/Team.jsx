@@ -27,9 +27,9 @@ const Team = () => {
             {/* HERO SECTION */}
             <section className="team-hero">
                 <div className="hero-mist-overlay"></div>
-                <div className="container" style={{maxWidth: '100%', padding: '0'}}>
+                <div className="container" style={{ maxWidth: '100%', padding: '0' }}>
                     <div className="hero-text-box">
-                        <h1>Engineering the Future of <br/> <span>High-Power Rocketry</span></h1>
+                        <h1>Engineering the Future of <br /> <span>High-Power Rocketry</span></h1>
                         <p>Guided by industry-standard engineering and a commitment to safety, we aim to drive Australia's growing space industry through innovation, hands-on learning, and STEM outreach.</p>
                     </div>
                 </div>
@@ -46,7 +46,25 @@ const Team = () => {
                                     <img src={director.img} alt={director.name} />
                                     <div className="floating-info-box">
                                         <h3>{director.name}</h3>
-                                        <p>{director.role}</p>
+                                        <p className="role">{director.role}</p>
+                                    </div>
+
+                                    {/* Expanded transparent contact card - appears on hover */}
+                                    <div className="contact-card">
+                                        <div className="contact-inner">
+                                            <h2 className="contact-title">{director.name}</h2>
+                                            <h3 className="contact-role">{director.role}</h3>
+                                            <p className="contact-desc">Experienced team lead overseeing operations and strategy. Reach out for collaboration, press or technical enquiries.</p>
+                                            <a href={`mailto:rocketry@bmsce.ac.in`} className="contact-email">rocketry@bmsce.ac.in</a>
+                                            <div className="contact-links">
+                                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="contact-link icon-link" aria-label="LinkedIn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                                </a>
+                                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="contact-link icon-link" aria-label="Instagram">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -86,6 +104,7 @@ const Team = () => {
                             <li><Link to="/team">Team</Link></li>
                             <li><a href="#projects">Projects</a></li>
                             <li><Link to="/media">Media</Link></li>
+                            <li><Link to="/resources">Resources</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">

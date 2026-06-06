@@ -4,49 +4,6 @@ import "./Home.css";
 import { initScrollAnimation } from "./scrollAnimation";
 import { initGalleryAnimation } from "./galleryAnimation";
 
-const CountUp = ({ end, duration = 2000, suffix = "" }) => {
-    const [count, setCount] = useState(0);
-    const [isVisible, setIsVisible] = useState(false);
-    const elementRef = (node) => {
-        if (node) {
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        setIsVisible(true);
-                        observer.unobserve(node);
-                    }
-                },
-                { threshold: 0.1 }
-            );
-            observer.observe(node);
-        }
-    };
-
-    useEffect(() => {
-        if (!isVisible) return;
-
-        let startTime;
-        let animationFrame;
-
-        const updateCount = (timestamp) => {
-            if (!startTime) startTime = timestamp;
-            const progress = timestamp - startTime;
-            const percentage = Math.min(progress / duration, 1);
-
-            setCount(Math.floor(percentage * end));
-
-            if (percentage < 1) {
-                animationFrame = requestAnimationFrame(updateCount);
-            }
-        };
-
-        animationFrame = requestAnimationFrame(updateCount);
-        return () => cancelAnimationFrame(animationFrame);
-    }, [isVisible, end, duration]);
-
-    return <span ref={elementRef}>{count}{suffix}</span>;
-};
-
 export default function Home() {
     useEffect(() => {
         const scrollCleanup = initScrollAnimation();
@@ -149,21 +106,46 @@ export default function Home() {
                 </div>
             </div>
 
-            <section className="dashboard-stats" style={{ padding: "8rem 3rem", background: "#ffffff" }}>
-                <div className="container" style={{ textAlign: "center" }}>
-                    <h2 style={{ fontSize: "0.85rem", color: "#666", fontWeight: "700", letterSpacing: "4px", marginBottom: "4rem", textTransform: "uppercase" }}>By The Numbers</h2>
-                    <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
-                        <div className="stat-card">
-                            <h2 style={{ color: "#111827", fontSize: "4.5rem", fontWeight: "900", marginBottom: "0.5rem" }}><CountUp end={150} suffix="+" /></h2>
-                            <p style={{ color: "#4a5568", fontWeight: "500", textTransform: "lowercase", letterSpacing: "1px" }}>projects completed</p>
+            {/* SEE THE IMPACT SECTION */}
+            <section className="impact-section">
+                <div className="container">
+                    <div className="impact-header">
+                        <h2>See the Impact</h2>
+                        <Link to="/projects" className="impact-learn-more">LEARN MORE</Link>
+                    </div>
+                    
+                    <div className="impact-grid">
+                        <div className="impact-card">
+                            <div className="impact-label">PARDALOTE (2023-2025)</div>
+                            <img src="/patch-placeholder.png" alt="Pardalote" />
                         </div>
-                        <div className="stat-card">
-                            <h2 style={{ color: "#111827", fontSize: "4.5rem", fontWeight: "900", marginBottom: "0.5rem" }}><CountUp end={50} suffix="+" /></h2>
-                            <p style={{ color: "#4a5568", fontWeight: "500", textTransform: "lowercase", letterSpacing: "1px" }}>happy clients</p>
+                        <div className="impact-card">
+                            <div className="impact-label">ROSELLA (2022 - 2023)</div>
+                            <img src="/patch-placeholder.png" alt="Rosella" />
                         </div>
-                        <div className="stat-card">
-                            <h2 style={{ color: "#111827", fontSize: "4.5rem", fontWeight: "900", marginBottom: "0.5rem" }}><CountUp end={10} /></h2>
-                            <p style={{ color: "#4a5568", fontWeight: "500", textTransform: "lowercase", letterSpacing: "1px" }}>awards won</p>
+                        <div className="impact-card">
+                            <div className="impact-label">BLUEWREN (2021 - 2022)</div>
+                            <img src="/patch-placeholder.png" alt="Bluewren" />
+                        </div>
+                        <div className="impact-card">
+                            <div className="impact-label">FIRETAIL (2020 - 2021)</div>
+                            <img src="/patch-placeholder.png" alt="Firetail" />
+                        </div>
+                        <div className="impact-card">
+                            <div className="impact-label">BRONZEWING (2020 - 2021)</div>
+                            <img src="/patch-placeholder.png" alt="Bronzewing" />
+                        </div>
+                        <div className="impact-card">
+                            <div className="impact-label">SILVEREYE (2018 - 2019)</div>
+                            <img src="/patch-placeholder.png" alt="Silvereye" />
+                        </div>
+                        <div className="impact-card">
+                            <div className="impact-label">WATTLE (2022 - 2023)</div>
+                            <img src="/patch-placeholder.png" alt="Wattle" />
+                        </div>
+                        <div className="impact-card">
+                            <div className="impact-label">CALLISTLEMON (2021 - 2022)</div>
+                            <img src="/patch-placeholder.png" alt="Callistlemon" />
                         </div>
                     </div>
                 </div>
@@ -173,16 +155,24 @@ export default function Home() {
                 <div className="container">
                     <h1 style={{ color: "#1a1a1a" }}>Current Projects</h1>
                     <div className="project1">
-                        <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=800" alt="Rocket Model" />
-                        <div className="card1"><h2>Solid Fuel Rocket Mk-1</h2>
-                            <p>Our primary launch vehicle for high-altitude research.</p>
-                        </div>
+                        <Link to="/projects/mk-1" style={{ display: 'contents', textDecoration: 'none', color: 'inherit' }}>
+                            <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=800" alt="Rocket Model" style={{ cursor: 'pointer' }} />
+                            <div className="card1" style={{ cursor: 'pointer' }}>
+                                <h2>Solid Fuel Rocket Mk-1</h2>
+                                <p>Our primary launch vehicle for high-altitude research.</p>
+                                <span className="impact-learn-more" style={{ marginTop: '1.5rem' }}>LEARN MORE</span>
+                            </div>
+                        </Link>
                     </div>
                     <div className="project2">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Electronics module" />
-                        <div className="card2"><h2>Avionics System</h2>
-                            <p>State-of-the-art flight control and real-time telemetry system.</p>
-                        </div>
+                        <Link to="/projects/avionics" style={{ display: 'contents', textDecoration: 'none', color: 'inherit' }}>
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Electronics module" style={{ cursor: 'pointer' }} />
+                            <div className="card2" style={{ cursor: 'pointer' }}>
+                                <h2>Avionics System</h2>
+                                <p>State-of-the-art flight control and real-time telemetry system.</p>
+                                <span className="impact-learn-more" style={{ marginTop: '1.5rem' }}>LEARN MORE</span>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -208,93 +198,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="technical-resources-section" id="resources">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title-alt">Technical Resources</h2>
-                        <p className="section-subtitle">Research publications, engineering documentation, educational material and compliance reference.</p>
-                    </div>
-
-                    <div className="resources-grid">
-                        <div className="resource-category-card">
-                            <div className="category-header">
-                                <div className="category-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                                </div>
-                                <h3>Research Papers</h3>
-                            </div>
-                            <div className="resource-list">
-                                <div className="resource-item">
-                                    <span className="file-name">Aerodynamic Analysis of Subsonic Rockets</span>
-                                    <button className="download-btn">Download PDF</button>
-                                </div>
-                                <div className="resource-item">
-                                    <span className="file-name">CFD Modeling for Fin Optimization</span>
-                                    <button className="download-btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="resource-category-card">
-                            <div className="category-header">
-                                <div className="category-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                </div>
-                                <h3>Technical Reports</h3>
-                            </div>
-                            <div className="resource-list">
-                                <div className="resource-item">
-                                    <span className="file-name">Static Fire Test Report - Q1 2024</span>
-                                    <button className="download-btn">Download PDF</button>
-                                </div>
-                                <div className="resource-item">
-                                    <span className="file-name">Avionics Integration Review</span>
-                                    <button className="download-btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="resource-category-card">
-                            <div className="category-header">
-                                <div className="category-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10v6M6 12h12"></path><rect x="6" y="4" width="12" height="16" rx="2"></rect></svg>
-                                </div>
-                                <h3>HPR 101 (Educational)</h3>
-                            </div>
-                            <div className="resource-list">
-                                <div className="resource-item">
-                                    <span className="file-name">Introduction to High Power Rocketry</span>
-                                    <button className="download-btn">Download PDF</button>
-                                </div>
-                                <div className="resource-item">
-                                    <span className="file-name">Motor Classification & Safety Guide</span>
-                                    <button className="download-btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="resource-category-card">
-                            <div className="category-header">
-                                <div className="category-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                                </div>
-                                <h3>Safety Compliance</h3>
-                                <p className="category-subtitle">Legal & Safety Documentation</p>
-                            </div>
-                            <div className="resource-list">
-                                <div className="resource-item">
-                                    <span className="file-name">Range Safety Regulations 2024</span>
-                                    <button className="download-btn">Download PDF</button>
-                                </div>
-                                <div className="resource-item">
-                                    <span className="file-name">Legal Compliance & Liability Docs</span>
-                                    <button className="download-btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* Technical Resources removed from home — moved to standalone /resources page */}
 
             <footer className="footer" style={{ background: "#111827", color: "white" }}>
                 <div className="footer-content container">
@@ -305,7 +209,7 @@ export default function Home() {
                             <li><a href="#projects">PARTNERS</a></li>
                             <li><Link to="/projects">PROJECTS</Link></li>
                             <li><Link to="/media">MEDIA</Link></li>
-                            <li><a href="#resources">RESOURCES</a></li>
+                            <li><Link to="/resources">RESOURCES</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
