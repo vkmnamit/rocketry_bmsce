@@ -25,8 +25,8 @@ const Navbar = () => {
     const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
     const projectsList = [
-        "Pardalote", "Wattle", "Rosella", "Bluewren", "Waratah", 
-        "Tetratheca", "Silvereye", "Wedgetail", "Bronzewing", 
+        "Pardalote", "Wattle", "Rosella", "Bluewren", "Waratah",
+        "Tetratheca", "Silvereye", "Wedgetail", "Bronzewing",
         "Callistemon", "Ironbark", "Firetail"
     ];
 
@@ -34,26 +34,26 @@ const Navbar = () => {
         <header className="header">
             <div className="logo-container">
                 <Link to="/">
-                    <img 
-                        src="https://res.cloudinary.com/dxynzodll/image/upload/v1774003970/Rocketry_Design_Kit_s5omlp.png" 
-                        alt="BMSCE Rocketry Logo" 
-                        className="nav-logo" 
+                    <img
+                        src="https://res.cloudinary.com/dxynzodll/image/upload/v1774003970/Rocketry_Design_Kit_s5omlp.png"
+                        alt="BMSCE Rocketry Logo"
+                        className="nav-logo"
                     />
                 </Link>
             </div>
 
             <nav className="desktop-nav">
-                <NavLink to="/team" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>TEAM</NavLink>
-                <NavLink to="/partners" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>PARTNERS</NavLink>
-                
+                <NavLink to="/team" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>TEAM</NavLink>
+                <NavLink to="/partners" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>PARTNERS</NavLink>
+
                 <div className="nav-dropdown-wrapper">
-                    <NavLink to="/projects" className={({isActive}) => isActive ? "nav-link dropdown-trigger active" : "nav-link dropdown-trigger"}>
+                    <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-link dropdown-trigger active" : "nav-link dropdown-trigger"}>
                         PROJECTS <span className="arrow">▾</span>
                     </NavLink>
                     <div className="dropdown-menu">
                         {projectsList.map((project, idx) => (
-                            <NavLink 
-                                key={idx} 
+                            <NavLink
+                                key={idx}
                                 to={`/projects/${project.toLowerCase()}`}
                                 className="dropdown-item"
                             >
@@ -63,7 +63,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <NavLink to="/media" className={({isActive}) => isActive ? "nav-link active" : "nav-link"}>MEDIA</NavLink>
+                <NavLink to="/media" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>MEDIA</NavLink>
             </nav>
 
             <button className="hamburger" onClick={toggleMobileMenu} aria-label="Toggle menu">
@@ -74,10 +74,10 @@ const Navbar = () => {
 
             <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
                 <nav>
-                    <NavLink to="/team" className={({isActive}) => isActive ? "active" : ""}>TEAM</NavLink>
-                    <NavLink to="/partners" className={({isActive}) => isActive ? "active" : ""}>PARTNERS</NavLink>
-                    <NavLink to="/projects" className={({isActive}) => isActive ? "active" : ""}>PROJECTS</NavLink>
-                    <NavLink to="/media" className={({isActive}) => isActive ? "active" : ""}>MEDIA</NavLink>
+                    <NavLink to="/team" className={({ isActive }) => isActive ? "active" : ""}>TEAM</NavLink>
+                    <NavLink to="/partners" className={({ isActive }) => isActive ? "active" : ""}>PARTNERS</NavLink>
+                    <NavLink to="/projects" className={({ isActive }) => isActive ? "active" : ""}>PROJECTS</NavLink>
+                    <NavLink to="/media" className={({ isActive }) => isActive ? "active" : ""}>MEDIA</NavLink>
                 </nav>
 
                 <div className="mobile-footer">

@@ -1,0 +1,77 @@
+.resources-page {
+    background-color: #f9fafb;
+    color: #1a1a1a;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.resources-header {
+    background: #001B3D;
+    color: white;
+    padding: 180px 20px 100px;
+    text-align: center;
+}
+
+.resources-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.resources-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.resources-main {
+    padding: 80px 0;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.resource-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #F97316;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #001B3D;
+}
+
+.resource-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.resource-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: #F97316;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.resource-btn:hover {
+    background: #ea580c;
+}
