@@ -61,6 +61,25 @@ const Media = () => {
                         </div>
                     </section>
                 ))}
+                {/* Photo frame gallery wall (reinserted) */}
+                <section className="gallery-wall-section">
+                    <div className="container gallery-wall-grid">
+                        <div className="frame frame-1"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800" alt="g1" /></div>
+                        <div className="frame frame-2"><img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&q=80&w=800" alt="g2" /></div>
+                        <div className="frame frame-3"><img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&q=80&w=800" alt="g3" /></div>
+                        <div className="frame frame-4"><img src="https://images.unsplash.com/photo-1470309864661-68328b2cd0a5?auto=format&fit=crop&q=80&w=800" alt="g4" /></div>
+                        <div className="frame frame-5"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=800" alt="g5" /></div>
+                        <div className="frame frame-6"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=800" alt="g6" /></div>
+                        <div className="frame frame-7"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=800" alt="g7" /></div>
+                        <div className="frame frame-8"><img src="https://images.unsplash.com/photo-1444427169197-de497742b62d?auto=format&fit=crop&q=80&w=800" alt="g8" /></div>
+                        <div className="frame frame-9"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800" alt="g9" /></div>
+                        <div className="frame frame-10"><img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&q=80&w=800" alt="g10" /></div>
+                        <div className="frame frame-11"><img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&q=80&w=800" alt="g11" /></div>
+                        <div className="frame frame-12"><img src="https://images.unsplash.com/photo-1495427513696-4f5f6a14e0d8?auto=format&fit=crop&q=80&w=800" alt="g12" /></div>
+                        <div className="frame frame-13"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&q=80&w=800" alt="g13" /></div>
+                        <div className="frame frame-14"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=800" alt="g14" /></div>
+                    </div>
+                </section>
             </main>
 
             <footer className="footer bg-dark">

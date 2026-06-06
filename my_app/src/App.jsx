@@ -6,6 +6,7 @@ import Media from './Media.jsx'
 import Partners from './Partners.jsx'
 import Projects from './Projects.jsx'
 import ProjectDetail from './ProjectDetail.jsx'
+import TechnicalResources from './TechnicalResources.jsx'
 import Navbar from './Navbar.jsx'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:projectId" element={<ProjectDetail />} />
+          <Route path="/resources" element={<TechnicalResources />} />
         </Routes>
       </div>
     </Router>

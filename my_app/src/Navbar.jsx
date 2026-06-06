@@ -37,7 +37,7 @@ const Navbar = () => {
             <div className="logo-container">
                 <Link to="/">
                     <img
-                        src="https://res.cloudinary.com/dxynzodll/image/upload/v1774003970/Rocketry_Design_Kit_s5omlp.png"
+                        src={logo}
                         alt="BMSCE Rocketry Logo"
                         className="nav-logo"
                     />
@@ -66,6 +66,7 @@ const Navbar = () => {
                 </div>
 
                 <NavLink to="/media" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>MEDIA</NavLink>
+                <NavLink to="/resources" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>RESOURCES</NavLink>
             </nav>
 
             <button className="hamburger" onClick={toggleMobileMenu} aria-label="Toggle menu">
@@ -80,6 +81,7 @@ const Navbar = () => {
                     <NavLink to="/partners" className={({ isActive }) => isActive ? "active" : ""}>PARTNERS</NavLink>
                     <NavLink to="/projects" className={({ isActive }) => isActive ? "active" : ""}>PROJECTS</NavLink>
                     <NavLink to="/media" className={({ isActive }) => isActive ? "active" : ""}>MEDIA</NavLink>
+                    <NavLink to="/resources" className={({ isActive }) => isActive ? "active" : ""}>RESOURCES</NavLink>
                 </nav>
 
                 <div className="mobile-footer">
