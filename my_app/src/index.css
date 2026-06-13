@@ -3,8 +3,14 @@
     line-height: 1.5;
     font-weight: 400;
 
-    background-color: #ffffff;
-    color: #1a1a1a;
+    /* Global theme variables (used across the site) */
+    --site-bg: rgba(3, 7, 18, 0.96);
+    /* deep navy overlay base */
+    --site-fg: #ffffff;
+    /* primary foreground (text) */
+
+    background-color: var(--site-bg);
+    color: var(--site-fg);
 
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -21,6 +27,31 @@ body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+}
+
+/* Utility: place a solid translucent dark overlay over elements with background images
+   Use by adding the class `bg-overlay` to a container that has a background image.
+   The overlay uses the user's requested rgba(3,7,18,0.96) and keeps content readable. */
+.bg-overlay {
+    position: relative;
+    isolation: isolate;
+    /* keep stacking context local */
+}
+
+.bg-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 7, 18, 0.96);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Ensure direct children intended as content sit above the overlay */
+.bg-overlay>* {
+    position: relative;
+    z-index: 2;
+    color: var(--site-fg) !important;
 }
 
 /* Prevent horizontal scrolling caused by wide elements */
@@ -57,9 +88,10 @@ h6 {
 
 /* --- Global Footer Styles --- */
 .footer {
-    padding: 2.5rem 2rem;
-    /* Reduced height as requested */
-    background: #111827;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #020617 0%, rgba(3, 7, 18, 0.95) 50%, rgba(249, 115, 22, 0.15) 85%, rgba(251, 191, 36, 0.1) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
     color: white;
 }
 

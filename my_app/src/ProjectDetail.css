@@ -1,5 +1,5 @@
 .project-detail-root {
-    background: #ffffff;
+    background: transparent;
     padding-top: 60px; /* Aligned with fixed Navbar */
 }
 
@@ -67,7 +67,7 @@
 
 .overview-text h2 {
     font-size: 2.2rem;
-    color: #111827;
+    color: var(--site-fg);
     margin-bottom: 2rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -76,7 +76,7 @@
 .main-desc {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #1e293b;
+    color: var(--site-fg);
     margin-bottom: 3rem;
     font-weight: 600;
     font-style: italic;
@@ -98,8 +98,8 @@
 
 .contribution-list li {
     padding: 0.75rem 0;
-    border-bottom: 1px solid #f1f5f9;
-    color: #475569;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
 }
 
@@ -130,7 +130,7 @@
 
 .history-text h2 {
     font-size: 2.2rem;
-    color: #111827;
+    color: var(--site-fg);
     margin-bottom: 2rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -139,7 +139,7 @@
 .history-text p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #334155;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .rocket-stat-image img {
@@ -151,7 +151,7 @@
 .technical-leads h2 {
     text-align: center;
     font-size: 2.2rem;
-    color: #111827;
+    color: var(--site-fg);
     margin-bottom: 4rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -185,7 +185,7 @@
 
 .lead-info h3 {
     font-size: 1.2rem;
-    color: #111827;
+    color: var(--site-fg);
     margin-bottom: 0.5rem;
     font-weight: 800;
 }
@@ -204,11 +204,11 @@
 
 .project-footer {
     padding: 4rem 0;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .back-link {
-    color: #111827;
+    color: var(--site-fg);
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s;

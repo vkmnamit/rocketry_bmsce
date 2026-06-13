@@ -20,7 +20,7 @@
 }
 
 .header.transparent-on-home .nav-link {
-    color: rgba(255,255,255,0.95);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .header.transparent-on-home .nav-link:hover,
@@ -41,8 +41,22 @@
 }
 
 .nav-logo {
-    height: 38px;
+    height: 46px;
+    /* increased slightly for better visibility */
     display: block;
+}
+
+/* Ensure the logo sits above hero/background imagery on transparent headers */
+.header .nav-logo {
+    position: relative;
+    z-index: 9999;
+    /* place above hero image */
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.55));
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.header.transparent-on-home .nav-logo {
+    transform: translateY(-1px);
 }
 
 .desktop-nav {
@@ -94,7 +108,7 @@
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    background: rgba(10, 14, 22, 0.98);
+    background: rgba(3, 7, 18, 0.96);
     min-width: 220px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     opacity: 0;
@@ -182,7 +196,7 @@
         right: -100%;
         width: 270px;
         height: 100vh;
-        background: #0b1220;
+        background: rgba(3, 7, 18, 0.96);
         z-index: 2100;
         padding: 6.5rem 1.25rem 2.5rem 1.25rem;
         transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
@@ -195,11 +209,60 @@
         right: 0;
     }
 
+    /* Hide the mobile nav entirely on Home where we prefer a clean hero */
+    .mobile-menu.hidden-on-home {
+        display: none;
+    }
 
     .mobile-menu nav {
         display: flex;
         flex-direction: column;
         gap: 1.6rem;
+    }
+
+    .mobile-projects {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .mobile-projects-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .mobile-projects-toggle {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .mobile-projects-list {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.28s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-projects-list.open {
+        max-height: 400px;
+        /* enough to show long lists */
+    }
+
+    .mobile-project-item {
+        padding-left: 0.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: none;
+        letter-spacing: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
     .mobile-menu nav a {

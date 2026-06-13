@@ -1,12 +1,12 @@
 .resources-page {
-    background-color: #f9fafb;
-    color: #1a1a1a;
+    background-color: transparent;
+    color: var(--site-fg);
     font-family: 'Outfit', 'Inter', sans-serif;
     min-height: 100vh;
 }
 
 .resources-header {
-    background: #001B3D;
+    background: rgba(3, 7, 18, 0.96);
     color: white;
     padding: 180px 20px 100px;
     text-align: center;
@@ -36,10 +36,11 @@
 }
 
 .resource-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 40px 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 4px solid #F97316;
 }
@@ -52,11 +53,11 @@
 .resource-card h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #001B3D;
+    color: var(--site-fg);
 }
 
 .resource-card p {
-    color: #555;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     margin-bottom: 2rem;
 }

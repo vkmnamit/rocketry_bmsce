@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import logo from './assets/logo.png'; // Assuming you have a logo image in src/assets/
+// Use hosted logo image (removebg version)
+const logoUrl = 'https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781288722/Rocketry_logo_1-removebg-preview_x24fqk.png';
+import { projectsData } from './projectsData';
 
 
 const Navbar = () => {
@@ -25,12 +27,13 @@ const Navbar = () => {
     }, []);
 
     const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+    const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
-    const projectsList = [
-        "Pardalote", "Wattle", "Rosella", "Bluewren", "Waratah",
-        "Tetratheca", "Silvereye", "Wedgetail", "Bronzewing",
-        "Callistemon", "Ironbark", "Firetail"
-    ];
+    // Build projects list from projectsData (keys act as slugs)
+    const projectsList = Object.keys(projectsData || {}).map(key => ({
+        slug: key,
+        name: projectsData[key].name || key
+    }));
 
     // pages that look better with a dark header (white links)
     const darkHeaderPages = ['/partners', '/media'];
@@ -56,7 +59,7 @@ const Navbar = () => {
             <div className="logo-container">
                 <Link to="/">
                     <img
-                        src={logo}
+                        src={logoUrl}
                         alt="BMSCE Rocketry Logo"
                         className="nav-logo"
                     />
@@ -73,13 +76,13 @@ const Navbar = () => {
                         PROJECTS <span className="arrow">▾</span>
                     </NavLink>
                     <div className="dropdown-menu">
-                        {projectsList.map((project, idx) => (
+                        {projectsList.map((project) => (
                             <NavLink
-                                key={idx}
-                                to={`/projects/${project.toLowerCase()}`}
+                                key={project.slug}
+                                to={`/projects/${project.slug}`}
                                 className="dropdown-item"
                             >
-                                {project}
+                                {project.name}
                             </NavLink>
                         ))}
                     </div>
@@ -100,7 +103,24 @@ const Navbar = () => {
                     <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>HOME</NavLink>
                     <NavLink to="/team" className={({ isActive }) => isActive ? "active" : ""}>TEAM</NavLink>
                     <NavLink to="/partners" className={({ isActive }) => isActive ? "active" : ""}>PARTNERS</NavLink>
-                    <NavLink to="/projects" className={({ isActive }) => isActive ? "active" : ""}>PROJECTS</NavLink>
+                    <div className="mobile-projects">
+                        <div className="mobile-projects-header">
+                            <NavLink to="/projects" className={({ isActive }) => isActive ? "active" : ""}>PROJECTS</NavLink>
+                            <button
+                                className="mobile-projects-toggle"
+                                aria-expanded={mobileProjectsOpen}
+                                onClick={() => setMobileProjectsOpen(open => !open)}
+                                aria-label="Toggle projects list"
+                            >
+                                ▾
+                            </button>
+                        </div>
+                        <div className={`mobile-projects-list ${mobileProjectsOpen ? 'open' : ''}`}>
+                            {projectsList.map(p => (
+                                <NavLink key={p.slug} to={`/projects/${p.slug}`} className="mobile-project-item">{p.name}</NavLink>
+                            ))}
+                        </div>
+                    </div>
                     <NavLink to="/media" className={({ isActive }) => isActive ? "active" : ""}>MEDIA</NavLink>
                     <NavLink to="/resources" className={({ isActive }) => isActive ? "active" : ""}>RESOURCES</NavLink>
                 </nav>

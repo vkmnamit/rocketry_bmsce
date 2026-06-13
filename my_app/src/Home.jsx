@@ -40,28 +40,28 @@ export default function Home() {
                     <div className="about-grid">
                         <div className="about-info-blocks">
                             <div className="info-block">
-                                <div className="info-icon">⭐</div>
+                                <div className="info-icon"><img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781349168/ChatGPT_Image_Jun_13_2026_04_42_16_PM_kzvnqt.png" alt="Team Icon" style={{ width: "96px", height: "96px", objectFit: "contain", position: "relative", zIndex: 10 }} /></div>
                                 <div className="info-text">
                                     <h3>THE TEAM</h3>
                                     <p>We are a highly-technical team of student engineers who design, manufacture and test high power sounding rockets to compete in competitions.</p>
                                 </div>
                             </div>
                             <div className="info-block">
-                                <div className="info-icon">👁️</div>
+                                <div className="info-icon"><img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781349951/ChatGPT_Image_Jun_13_2026_04_55_43_PM_ibzrgs.png" alt="Vision Icon" style={{ width: "96px", height: "96px", objectFit: "contain", position: "relative", zIndex: 10 }} /></div>
                                 <div className="info-text">
                                     <h3>OUR VISION</h3>
                                     <p>Our passionate team strives to innovate and push the boundaries of the sounding rocket environment everyday.</p>
                                 </div>
                             </div>
                             <div className="info-block">
-                                <div className="info-icon">🚀</div>
+                                <div className="info-icon"><img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781349582/ChatGPT_Image_Jun_13__2026__04_42_21_PM-removebg-preview_yzda3d.png" alt="Rocket Icon" style={{ width: "96px", height: "96px", objectFit: "contain", position: "relative", zIndex: 10 }} /></div>
                                 <div className="info-text">
                                     <h3>OUR ROCKETS</h3>
                                     <p>Our rockets are designed for performance and built with integrity. We take a systems engineering approach.</p>
                                 </div>
                             </div>
                             <div className="info-block">
-                                <div className="info-icon">🏢</div>
+                                <div className="info-icon"><img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781349169/ChatGPT_Image_Jun_13_2026_04_42_26_PM_ky23po.png" alt="Sponsors Icon" style={{ width: "96px", height: "96px", objectFit: "contain", position: "relative", zIndex: 10 }} /></div>
                                 <div className="info-text">
                                     <h3>OUR SPONSORS</h3>
                                     <p>BMSCE Rocketry Team would not have been able to achieve all of our major milestones without our sponsors.</p>
@@ -84,7 +84,7 @@ export default function Home() {
                     <div className="quick-link-cards">
                         <div className="q-card">
                             <div className="q-image">
-                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400" alt="Members working on rocket" />
+                                <img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781286559/DSC_2119_d0sizj.jpg" alt="Members working on rocket" />
                             </div>
                             <div className="q-content">
                                 <h3>Our Team</h3>
@@ -94,7 +94,7 @@ export default function Home() {
                         </div>
                         <div className="q-card">
                             <div className="q-image">
-                                <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?auto=format&fit=crop&q=80&w=400" alt="Media display" />
+                                <img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781288815/DSC_2011_nt6mwy.jpg" alt="Media display" />
                             </div>
                             <div className="q-content">
                                 <h3>Media Releases</h3>
@@ -113,47 +113,34 @@ export default function Home() {
                         <h2>See the Impact</h2>
                         <Link to="/projects" className="impact-learn-more">LEARN MORE</Link>
                     </div>
-                    
+
                     <div className="impact-grid">
-                        <div className="impact-card">
-                            <div className="impact-label">PARDALOTE (2023-2025)</div>
-                            <img src="/patch-placeholder.png" alt="Pardalote" />
-                        </div>
-                        <div className="impact-card">
-                            <div className="impact-label">ROSELLA (2022 - 2023)</div>
-                            <img src="/patch-placeholder.png" alt="Rosella" />
-                        </div>
-                        <div className="impact-card">
-                            <div className="impact-label">BLUEWREN (2021 - 2022)</div>
-                            <img src="/patch-placeholder.png" alt="Bluewren" />
-                        </div>
-                        <div className="impact-card">
-                            <div className="impact-label">FIRETAIL (2020 - 2021)</div>
-                            <img src="/patch-placeholder.png" alt="Firetail" />
-                        </div>
-                        <div className="impact-card">
-                            <div className="impact-label">BRONZEWING (2020 - 2021)</div>
-                            <img src="/patch-placeholder.png" alt="Bronzewing" />
-                        </div>
-                        <div className="impact-card">
-                            <div className="impact-label">SILVEREYE (2018 - 2019)</div>
-                            <img src="/patch-placeholder.png" alt="Silvereye" />
-                        </div>
-                        <div className="impact-card">
-                            <div className="impact-label">WATTLE (2022 - 2023)</div>
-                            <img src="/patch-placeholder.png" alt="Wattle" />
-                        </div>
-                        <div className="impact-card">
-                            <div className="impact-label">CALLISTLEMON (2021 - 2022)</div>
-                            <img src="/patch-placeholder.png" alt="Callistlemon" />
-                        </div>
+                        <Link to="/projects/pardalote" className="impact-card" aria-label="Pardalote project">
+                            <div className="impact-label">PHOENIX - NAF-2 Mk II (2026)</div>
+                            <img className="impact-patch" src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781285444/missionpatch3_qvout0.png" alt="Pardalote mission patch - 2023 to 2025" />
+                        </Link>
+
+                        <Link to="/projects/rosella" className="impact-card" aria-label="Rosella project">
+                            <div className="impact-label">LUMOS S3P3 (2026)</div>
+                            <img className="impact-patch" src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781285444/missionpatch4_uzpbw1.png" alt="Rosella mission patch - 2022 to 2023" />
+                        </Link>
+
+                        <Link to="/projects/bluewren" className="impact-card" aria-label="Bluewren project">
+                            <div className="impact-label">BVYOMAGNI (2025)</div>
+                            <img className="impact-patch" src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781285444/missionpatch2_keupyc.png" alt="Bluewren mission patch - 2021 to 2022" />
+                        </Link>
+
+                        <Link to="/projects/firetail" className="impact-card" aria-label="Firetail project">
+                            <div className="impact-label">NAF-2 (2025)</div>
+                            <img className="impact-patch" src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781285445/missionpatch1_gz05ro.png" alt="Firetail mission patch" />
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            <div className="project" id="projects" style={{ background: "white" }}>
+            <div className="project" id="projects" style={{ background: "transparent" }}>
                 <div className="container">
-                    <h1 style={{ color: "#1a1a1a" }}>Current Projects</h1>
+                    <h1 style={{ color: "var(--site-fg)" }}>Current Projects</h1>
                     <div className="project1">
                         <Link to="/projects/mk-1" style={{ display: 'contents', textDecoration: 'none', color: 'inherit' }}>
                             <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=800" alt="Rocket Model" style={{ cursor: 'pointer' }} />
@@ -177,22 +164,33 @@ export default function Home() {
                 </div>
             </div>
 
-            <section className="sponser_name" style={{ background: "#ffffff", padding: "6rem 0" }}>
+            <section className="sponser_name" style={{ background: "transparent", padding: "6rem 0" }}>
                 <div className="feature-in-1" style={{ textAlign: "center" }}>
-                    <p style={{ fontSize: "0.85rem", color: "#666", fontWeight: "700", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "3rem" }}>As Featured In</p>
+                    <p style={{ fontSize: "0.85rem", color: "rgba(255, 255, 255, 0.6)", fontWeight: "700", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "3rem" }}>As Featured In</p>
                     <div className="marquee">
                         <div className="marquee-content">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/HGTV_Logo_2010.svg/2560px-HGTV_Logo_2010.svg.png" alt="HGTV Logo" style={{ height: "40px" }} />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Exp_realty_logo.svg/2560px-Exp_realty_logo.svg.png" alt="Exp Realty Logo" style={{ height: "40px" }} />
-                            <img src="https://logos-world.net/wp-content/uploads/2021/08/Fortune-Magazine-Logo.png" alt="Fortune Logo" style={{ height: "40px" }} />
-                            {/* Duplicate for infinite loop */}
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/HGTV_Logo_2010.svg/2560px-HGTV_Logo_2010.svg.png" alt="HGTV Logo" style={{ height: "40px" }} />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Exp_realty_logo.svg/2560px-Exp_realty_logo.svg.png" alt="Exp Realty Logo" style={{ height: "40px" }} />
-                            <img src="https://logos-world.net/wp-content/uploads/2021/08/Fortune-Magazine-Logo.png" alt="Fortune Logo" style={{ height: "40px" }} />
-                            {/* More duplicates to fill space */}
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/HGTV_Logo_2010.svg/2560px-HGTV_Logo_2010.svg.png" alt="HGTV Logo" style={{ height: "40px" }} />
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Exp_realty_logo.svg/2560px-Exp_realty_logo.svg.png" alt="Exp Realty Logo" style={{ height: "40px" }} />
-                            <img src="https://logos-world.net/wp-content/uploads/2021/08/Fortune-Magazine-Logo.png" alt="Fortune Logo" style={{ height: "40px" }} />
+                            {/* First Half */}
+                            <img src="https://nxtbld.com/wp-content/uploads/2025/01/dassault-systemes-logo.jpg" alt="Dassault Systemes" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkgETqG7izDS97As0V460x-am_h2T9m-yUZDdGlxy1nTUSV7FA7yrdpuKb&s=10" alt="Sponsor 2" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyG3MnDkCr3MHCIFJRrz4OfeQiRidK-qk1Z_xtH6Flyg&s=10" alt="Sponsor 3" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBBwruDjhrvw_9EYqTdOEGU3BsBuvT0skXLIl9b9owXeIDqWql6sdc2eA&s=10" alt="Sponsor 4" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781349105/Screenshot_2026-06-13_at_4.40.41_PM-removebg-preview_hy3afk.png" alt="Sponsor 5" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://nxtbld.com/wp-content/uploads/2025/01/dassault-systemes-logo.jpg" alt="Dassault Systemes" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkgETqG7izDS97As0V460x-am_h2T9m-yUZDdGlxy1nTUSV7FA7yrdpuKb&s=10" alt="Sponsor 2" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyG3MnDkCr3MHCIFJRrz4OfeQiRidK-qk1Z_xtH6Flyg&s=10" alt="Sponsor 3" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBBwruDjhrvw_9EYqTdOEGU3BsBuvT0skXLIl9b9owXeIDqWql6sdc2eA&s=10" alt="Sponsor 4" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781349105/Screenshot_2026-06-13_at_4.40.41_PM-removebg-preview_hy3afk.png" alt="Sponsor 5" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            {/* Exact identical Second Half to ensure perfect -50% loop */}
+                            <img src="https://nxtbld.com/wp-content/uploads/2025/01/dassault-systemes-logo.jpg" alt="Dassault Systemes" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkgETqG7izDS97As0V460x-am_h2T9m-yUZDdGlxy1nTUSV7FA7yrdpuKb&s=10" alt="Sponsor 2" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyG3MnDkCr3MHCIFJRrz4OfeQiRidK-qk1Z_xtH6Flyg&s=10" alt="Sponsor 3" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBBwruDjhrvw_9EYqTdOEGU3BsBuvT0skXLIl9b9owXeIDqWql6sdc2eA&s=10" alt="Sponsor 4" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781349105/Screenshot_2026-06-13_at_4.40.41_PM-removebg-preview_hy3afk.png" alt="Sponsor 5" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://nxtbld.com/wp-content/uploads/2025/01/dassault-systemes-logo.jpg" alt="Dassault Systemes" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkgETqG7izDS97As0V460x-am_h2T9m-yUZDdGlxy1nTUSV7FA7yrdpuKb&s=10" alt="Sponsor 2" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyG3MnDkCr3MHCIFJRrz4OfeQiRidK-qk1Z_xtH6Flyg&s=10" alt="Sponsor 3" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBBwruDjhrvw_9EYqTdOEGU3BsBuvT0skXLIl9b9owXeIDqWql6sdc2eA&s=10" alt="Sponsor 4" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
+                            <img src="https://res.cloudinary.com/dgrrdy6sk/image/upload/v1781349105/Screenshot_2026-06-13_at_4.40.41_PM-removebg-preview_hy3afk.png" alt="Sponsor 5" style={{ height: "100px", objectFit: "contain", borderRadius: "4px", position: "relative", zIndex: 10 }} />
                         </div>
                     </div>
                 </div>
@@ -200,7 +198,7 @@ export default function Home() {
 
             {/* Technical Resources removed from home — moved to standalone /resources page */}
 
-            <footer className="footer" style={{ background: "#111827", color: "white" }}>
+            <footer className="footer">
                 <div className="footer-content container">
                     <div className="footer-col">
                         <h2>Quick Links</h2>

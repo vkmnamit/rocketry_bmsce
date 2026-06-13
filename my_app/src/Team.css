@@ -1,13 +1,13 @@
 /* TEAM PAGE CSS */
 
 .team-page {
-    background-color: #f8f9fa;
-    color: #1a1a1a;
+    background-color: transparent;
+    color: var(--site-fg);
     font-family: 'Outfit', 'Inter', sans-serif;
 }
 
 .dark-header {
-    background: #001B3D;
+    background: rgba(3, 7, 18, 0.96);
     /* Updated to Navy */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -24,7 +24,7 @@
     /* Increased to cover almost full page */
     min-height: 650px;
     position: relative;
-    background: #ffffff;
+    background: transparent;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -48,14 +48,14 @@
     left: -1px;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #ffffff 0%, #ffffff88 20%, transparent 50%);
+    background: linear-gradient(to right, rgba(3, 7, 18, 0.96) 0%, rgba(3, 7, 18, 0.5) 20%, transparent 50%);
     pointer-events: none;
 }
 
 .hero-text-box {
     position: relative;
     z-index: 2;
-    background: #f8f9fa;
+    background: transparent;
     padding: 4rem 5rem;
     /* Slightly more padding */
     max-width: 650px;
@@ -69,19 +69,19 @@
 .hero-text-box h1 {
     font-size: 3rem;
     font-weight: 500;
-    color: #1a1a1a;
+    color: var(--site-fg);
     line-height: 1.1;
     margin-bottom: 1.5rem;
 }
 
 .hero-text-box h1 span {
     font-weight: 800;
-    color: #1a1a1a;
+    color: var(--site-fg);
 }
 
 .hero-text-box p {
     font-size: 1.1rem;
-    color: #4a4a4a;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
 }
 
@@ -91,7 +91,7 @@
     font-size: 3rem;
     font-weight: 600;
     margin: 4rem 0;
-    color: #1a1a1a;
+    color: var(--site-fg);
 }
 
 .our-team-section {
@@ -134,10 +134,10 @@
     position: absolute;
     bottom: 1.5rem;
     left: 1rem;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(3, 7, 18, 0.95);
     padding: 1rem 1.5rem;
     border-radius: 6px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
     z-index: 3;
     max-width: 85%;
     transform: translateY(0);
@@ -148,7 +148,7 @@
 .floating-info-box h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--site-fg);
     margin-bottom: 0.25rem;
 }
 
@@ -166,9 +166,9 @@
     /* cover the whole parent */
     margin: 0;
     /* spacing from edges */
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(3, 7, 18, 0.95);
     border-radius: 8px;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
     padding: 1.25rem;
     opacity: 0;
     pointer-events: none;
@@ -186,18 +186,18 @@
 .contact-inner h4 {
     margin: 0 0 0.25rem 0;
     font-size: 1.25rem;
-    color: #0b1220;
+    color: var(--site-fg);
 }
 
 .contact-role {
     margin: 0 0 0.5rem 0;
-    color: #4a5568;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 700;
 }
 
 .contact-desc {
     margin: 0 0 0.75rem 0;
-    color: #333;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.98rem;
 }
 
@@ -217,11 +217,11 @@
 
 .contact-link {
     font-size: 0.95rem;
-    color: #0b1220;
+    color: var(--site-fg);
     text-decoration: none;
     padding: 0.35rem 0.6rem;
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .contact-link:hover {
@@ -233,7 +233,7 @@
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
-    color: #4a5568;
+    color: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease;
 }
 
@@ -259,7 +259,7 @@
 
 /* Technical Teams Section */
 .tech-teams-section {
-    background: #fdf6f5;
+    background: transparent;
     padding-bottom: 8rem;
 }
 
@@ -268,7 +268,7 @@
     max-width: 800px;
     margin: 0 auto 4rem;
     font-size: 1.1rem;
-    color: #4a4a4a;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .tech-grid {
@@ -278,7 +278,8 @@
 }
 
 .tech-team-card {
-    background: #e9ecef;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -307,7 +308,7 @@
 .tech-card-content h3 {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--site-fg);
     margin-bottom: 0.5rem;
     font-style: italic;
     /* Matches USYD style for team names */
@@ -315,7 +316,7 @@
 
 .tech-card-content p {
     font-size: 0.9rem;
-    color: #3b4252;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
 }
 

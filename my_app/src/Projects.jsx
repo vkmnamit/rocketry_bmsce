@@ -1,24 +1,18 @@
 import React, { useEffect } from 'react';
 import './Projects.css';
 import { Link } from 'react-router-dom';
+import { projectsData } from './projectsData';
 
 const Projects = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    // Build project lists from centralized projectsData
     const projectData = {
-        ongoing: [
-            { id: 'pardalote', name: 'Pardalote', year: '2024-2025', description: 'Our latest hybrid rocket aiming for the 30k ft COTS category.', image: 'https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=800' }
-        ],
-        past: [
-            { id: 'wattle', name: 'Wattle', year: '2023', description: 'Winner of the Spaceport America Cup 2023.', image: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80&w=800' },
-            { id: 'rosella', name: 'Rosella', year: '2022', description: 'Innovation award winner at IREC.', image: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800' },
-            { id: 'bluewren', name: 'Bluewren', year: '2021', description: 'Our first successful 10k ft launch.', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800' }
-        ],
-        upcoming: [
-            { id: 'skyhawk', name: 'Skyhawk', year: '2026', description: 'Future deep space research vehicle.', image: 'https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?auto=format&fit=crop&q=80&w=800' }
-        ]
+        ongoing: [projectsData.pardalote],
+        past: [projectsData['naf-2'], projectsData.wattle, projectsData.rosella],
+        upcoming: []
     };
 
     return (
@@ -36,14 +30,14 @@ const Projects = () => {
                     <div className="project-category">
                         <h2 className="cat-title">Ongoing Projects</h2>
                         <div className="project-list">
-                            {projectData.ongoing.map(p => (
-                                <div key={p.id} className="project-card">
-                                    <div className="p-img"><img src={p.image} alt={p.name} /></div>
+                            {projectData.ongoing.map((p, idx) => (
+                                <div key={p.name + idx} className="project-card">
+                                    <div className="p-img"><img src={p.heroImage || p.image} alt={p.name} /></div>
                                     <div className="p-info">
                                         <span className="p-year">{p.year}</span>
                                         <h3>{p.name}</h3>
-                                        <p>{p.description}</p>
-                                        <Link to={`/projects/${p.id}`} className="view-btn">Full History</Link>
+                                        <p>{p.overview || p.description}</p>
+                                        <Link to={`/projects/${p.name.toLowerCase()}`} className="view-btn">Full History</Link>
                                     </div>
                                 </div>
                             ))}
@@ -53,14 +47,20 @@ const Projects = () => {
                     <div className="project-category">
                         <h2 className="cat-title">Past Projects</h2>
                         <div className="project-grid">
-                            {projectData.past.map(p => (
-                                <div key={p.id} className="project-small-card">
-                                    <div className="p-img"><img src={p.image} alt={p.name} /></div>
+                            {projectData.past.map((p, idx) => (
+                                <div key={(p.name || '') + idx} className="project-small-card">
+                                    <div className="p-img">
+                                        <img src={p.missionPatch || p.heroImage || p.image} alt={p.name} />
+                                    </div>
                                     <div className="p-info">
                                         <h3>{p.name}</h3>
                                         <span className="p-year">{p.year}</span>
-                                        <p>{p.description}</p>
-                                        <Link to={`/projects/${p.id}`}>VIEW DETAILS</Link>
+                                        <p>{p.overview || p.description}</p>
+                                        <Link to={`/projects/${(p.name || '').toLowerCase().replace(/\s+/g, '-')}`}>VIEW DETAILS</Link>
+                                        <div className="hover-details">
+                                            <strong>Mission Summary</strong>
+                                            <p>{p.overview || p.missionConclusion || ''}</p>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

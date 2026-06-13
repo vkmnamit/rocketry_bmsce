@@ -36,7 +36,7 @@
 }
 
 .projects-content {
-    background: #f8f9fa;
+    background: transparent;
     padding-top: 5rem;
 }
 
@@ -46,7 +46,7 @@
 
 .cat-title {
     font-size: 2.2rem;
-    color: #111827;
+    color: var(--site-fg);
     margin-bottom: 3rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -72,12 +72,13 @@
 }
 
 .project-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .p-img {
@@ -104,13 +105,13 @@
 
 .p-info h3 {
     font-size: 2.5rem;
-    color: #111827;
+    color: var(--site-fg);
     margin-bottom: 1.5rem;
     font-weight: 800;
 }
 
 .p-info p {
-    color: #666;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
     margin-bottom: 2rem;
     font-size: 1.1rem;
@@ -119,7 +120,8 @@
 .view-btn {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: #111827;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
     text-decoration: none;
     font-weight: 700;
@@ -139,7 +141,8 @@
 }
 
 .project-small-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
@@ -154,7 +157,7 @@
 
 .project-small-card h3 {
     font-size: 1.5rem;
-    color: #111827;
+    color: var(--site-fg);
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
@@ -166,6 +169,7 @@
 .project-small-card p {
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .project-small-card a {

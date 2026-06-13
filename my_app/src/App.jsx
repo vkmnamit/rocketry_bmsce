@@ -8,12 +8,14 @@ import Projects from './Projects.jsx'
 import ProjectDetail from './ProjectDetail.jsx'
 import TechnicalResources from './TechnicalResources.jsx'
 import Navbar from './Navbar.jsx'
+import FloatingHome from './FloatingHome.jsx'
 
 function App() {
   return (
     <Router>
       <div className="app-root">
         <Navbar />
+        <FloatingHome />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<Team />} />
